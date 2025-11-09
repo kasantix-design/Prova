@@ -11,6 +11,15 @@
 <body>
   <div class="topbar">
     <div class="hamburger">&#9776;</div>
+    <nav class="mobile-menu hidden" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="skrivekurs.html">Skrivekurs</a></li>
+        <li><a href="bøker.html">Bøker</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="login.html">Logg inn</a></li>
+      </ul>
+    </nav>
   </div>
 
   <header>
@@ -43,6 +52,11 @@
         }
       });
     }
+
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
   </script>
 </body>
 </html>
+

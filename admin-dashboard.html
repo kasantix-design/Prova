@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Velkommen, veileder</h1>
+    <button onclick="startSamtale()">Start ny samtale</button>
+    <div id="info"></div>
+  </main>
+
+  <script>
+    function startSamtale() {
+      // ✳️ dummy rom-ID fra Riverside (erstatt senere)
+      const roomId = 'green-room-123';
+      localStorage.setItem('roomId', roomId);
+      document.getElementById('info').innerHTML = `Samtale startet. Pasienten kan nå gå inn. <br> <a href="/videosamtale.html?room=${roomId}" target="_blank">Start samtale</a>`;
+    }
+  </script>
+</body>
+</html>

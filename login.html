@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logg inn</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Logg inn</h1>
+    <button class="login-btn" onclick="netlifyIdentity.open()">Logg inn / Registrer</button>
+  </main>
+
+  <script>
+    netlifyIdentity.on('login', user => {
+      const role = user.app_metadata?.roles?.[0] || 'pasient'; // grønn: ✳️ default til "pasient"
+      if (role === 'admin') {
+        window.location.href = '/admin-dashboard.html';
+      } else {
+        window.location.href = '/venterom.html';
+      }
+    });
+  </script>
+</body>
+</html>

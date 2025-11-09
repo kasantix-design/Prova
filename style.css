@@ -66,6 +66,22 @@ footer {
   padding: 0 1rem;
   border-bottom: 1px solid #ddd;
 }
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 
 .hamburger {
   font-size: 1.8rem;

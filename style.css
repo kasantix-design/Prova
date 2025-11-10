@@ -1,11 +1,9 @@
 :root {
-  --background: #F5F2E8;   /* Lys lin / sandtone */
-  --card: #FFFFFF;         /* Bokser oppå */
+  --background: #F5F2E8;   /* Lin / sandfarget bakgrunn */
+  --box: #F8E4D3;          /* Lys aprikos for boksene */
   --text: #2E2E2E;
-  --salvie: #A8C3A0;       /* Salviegrønn */
-  --aprikos: #F7B787;      /* Aprikos */
-  --beige: #EADBC8;        /* Header-farge */
-  --shadow: rgba(0, 0, 0, 0.07);
+  --accent: #A8C3A0;       /* Salviegrønn */
+  --shadow: rgba(0, 0, 0, 0.06);
 }
 
 /* -------------------- Grunnstruktur -------------------- */
@@ -20,45 +18,41 @@ body {
   scroll-behavior: smooth;
 }
 
-/* -------------------- Header -------------------- */
-.page-header {
-  background-color: var(--beige);
-  padding: 4rem 0 2.5rem;
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.page-header h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1.5px;
-  margin-bottom: 1rem;
-  color: var(--text);
-  font-weight: 600;
-}
-
-.page-header nav a {
-  color: var(--text);
-  margin: 0 1.5rem;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.page-header nav a:hover {
-  color: var(--salvie);
-}
-
-/* -------------------- Innholdsbokser -------------------- */
+/* -------------------- Innhold -------------------- */
 .content-area {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 1rem 6rem;
+  padding: 2rem 1rem 6rem;
 }
 
+/* -------------------- Hero-boksen -------------------- */
+.hero {
+  margin-top: 5rem; /* flyttet høyere */
+  padding: 6rem 3rem 5rem;
+  text-align: center;
+  background-color: var(--box);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.brand-name {
+  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #3e3e3e;
+}
+
+/* -------------------- Øvrige bokser -------------------- */
 .content-box {
-  background-color: var(--card);
+  background-color: var(--box);
   padding: 3rem 2.5rem;
-  margin: 4rem 0; /* luft mellom boksene */
+  margin: 5rem 0; /* luft mellom boksene */
   border-radius: 14px;
   box-shadow: 0 10px 30px var(--shadow);
   transition: transform 0.6s ease, box-shadow 0.6s ease;
@@ -71,15 +65,15 @@ body {
   transform: translateY(0);
 }
 
-/* Myk hover-løft */
+/* Hover-løft */
 .content-box:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
 }
 
-/* -------------------- Knapper -------------------- */
+/* -------------------- Knapp -------------------- */
 .btn {
-  background-color: var(--aprikos);
+  background-color: var(--accent);
   border: none;
   padding: 0.9rem 1.8rem;
   border-radius: 6px;
@@ -90,7 +84,7 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--salvie);
+  background-color: #B7D9B0;
   transform: translateY(-2px);
 }
 
@@ -101,5 +95,31 @@ footer {
   padding: 4rem 0 2rem;
   font-size: 0.9rem;
   opacity: 0.8;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------- Scroll-effekt -------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- Responsivitet -------------------- */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2.8rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .content-box {
+    padding: 2.2rem 1.5rem;
+  }
 }

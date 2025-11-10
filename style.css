@@ -1,170 +1,105 @@
 :root {
-  --primary: #2F4F4F;
-  --accent1: #A8D5BA;
-  --accent2: #F4D6A0;
-  --background: #F9FAF8;
-  --text-dark: #333333;
-  --text-light: #ffffff;
+  --background: #F5F2E8;   /* Lys lin / sandtone */
+  --card: #FFFFFF;         /* Bokser oppå */
+  --text: #2E2E2E;
+  --salvie: #A8C3A0;       /* Salviegrønn */
+  --aprikos: #F7B787;      /* Aprikos */
+  --beige: #EADBC8;        /* Header-farge */
+  --shadow: rgba(0, 0, 0, 0.07);
 }
 
-/* Reset & base */
-* {
+/* -------------------- Grunnstruktur -------------------- */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Lora", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--background);
-  color: var(--text-dark);
-  line-height: 1.6;
+/* -------------------- Header -------------------- */
+.page-header {
+  background-color: var(--beige);
+  padding: 4rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* ---------------- Header ---------------- */
-header {
-  background-color: var(--primary);
-  color: var(--text-light);
-  padding: 1rem 2rem;
+.page-header h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-weight: 600;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-nav a {
-  color: var(--accent2);
+.page-header nav a {
+  color: var(--text);
+  margin: 0 1.5rem;
   text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--accent1);
+.page-header nav a:hover {
+  color: var(--salvie);
 }
 
-/* ---------------- Hero ---------------- */
-.hero {
-  background-color: var(--background);
-  text-align: center;
-  padding: 6rem 2rem 4rem;
-}
-
-.hero-content {
-  background-color: var(--background);
-  max-width: 800px;
+/* -------------------- Innholdsbokser -------------------- */
+.content-area {
+  max-width: 900px;
   margin: 0 auto;
-  border: 1px solid rgba(47, 79, 79, 0.08);
-  border-radius: 10px;
-  padding: 3rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 4rem 1rem 6rem;
 }
 
-.hero h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
+.content-box {
+  background-color: var(--card);
+  padding: 3rem 2.5rem;
+  margin: 4rem 0; /* luft mellom boksene */
+  border-radius: 14px;
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  opacity: 0;
+  transform: translateY(60px);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.9;
+.content-box.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Myk hover-løft */
+.content-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------- Knapper -------------------- */
 .btn {
-  background-color: var(--accent2);
-  color: var(--text-dark);
-  padding: 0.9rem 1.8rem;
+  background-color: var(--aprikos);
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  color: var(--text);
   font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background-color: var(--accent1);
+  background-color: var(--salvie);
   transform: translateY(-2px);
 }
 
-/* ---------------- Sections ---------------- */
-section {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-section h3 {
-  color: var(--primary);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--accent1);
-  padding-left: 0.6rem;
-}
-
-section p {
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-}
-
-ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-}
-
-/* ---------------- Kontakt ---------------- */
-.email-link {
-  color: var(--primary);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.email-link:hover {
-  color: var(--accent1);
-  text-decoration: underline;
-}
-
-/* ---------------- Footer ---------------- */
+/* -------------------- Footer -------------------- */
 footer {
-  background-color: var(--background);
-  color: var(--primary);
   text-align: center;
-  padding: 3rem 1rem; /* Mer luft i bunnen */
+  color: var(--text);
+  padding: 4rem 0 2rem;
   font-size: 0.9rem;
-  border-top: 2px solid var(--accent1);
-}
-
-/* ---------------- Responsivitet ---------------- */
-@media (max-width: 768px) {
-  .topbar {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  .hero-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
+  opacity: 0.8;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }

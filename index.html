@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coach Navn – Finn ro, klarhet og retning</title>
+  <title>Coach Navn – Finn ro og klarhet</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+  <!-- Navigasjon -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">COACH NAVN</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="#om">Om</a>
+        <a href="#tjenester">Tjenester</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">
+        ☰
+      </button>
+    </div>
+  </header>
+
   <main class="content-area">
-    <!-- HERO-BOKS -->
+    <!-- HERO -->
     <section class="content-box hero fade-in">
       <h1 class="brand-name">COACH NAVN</h1>
       <p class="tagline">Finn ro, klarhet og retning</p>
@@ -45,18 +60,23 @@
     © 2025 Coach Navn – Livscoach i Oslo
   </footer>
 
-  <!-- Scroll-animasjon -->
+  <!-- Scroll- og meny-script -->
   <script>
+    // Fade-in ved scroll
     const boxes = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
-
     boxes.forEach(box => observer.observe(box));
+
+    // Hamburger-meny
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
   </script>
 </body>
 </html>

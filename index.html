@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
-// Dropdown Toggle
-document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.parentElement.classList.toggle('show');
-  });
-});
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', () => {
-  document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
-});
 
 <body>
 
@@ -32,19 +20,21 @@ document.addEventListener('click', () => {
     </a>
   </div>
 
-  <!-- Navigasjonsknapper på linjen under logo -->
-  <div class="dropdown">
-  <button class="nav-btn dropdown-btn">Tjenester ▾</button>
-
-  <div class="dropdown-content">
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcaster</a>
-  </div>
-</div>
+  <!-- Navigasjonslinje -->
   <div class="nav-row">
     <nav class="nav-links" id="navMenu">
+
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+        </div>
+      </div>
+
       <button class="nav-btn" onclick="location.href='boker.html'">Bøker</button>
       <button class="nav-btn" onclick="location.href='podcast.html'">Podcaster</button>
       <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
@@ -74,24 +64,24 @@ document.addEventListener('click', () => {
 
 
 <!-- INNHOLD -->
-
 <main class="content-area">
 
   <!-- HERO -->
   <section class="content-box fade-in hero-flex">
 
-   
+    <div class="hero-image-container">
+      <img src="images/mai.webp" alt="Mai Camilla Munkejord" class="hero-image">
+    </div>
 
     <div class="hero-text">
       <h2 class="hero-name">Mai Camilla Munkejord</h2>
       <p class="hero-title">forfatter · podcaster · kursholder</p>
       <h1 class="brand-name">LA MASKEN FALLE</h1>
-      
     </div>
 
   </section>
 
-  <!-- BOKS 2 – CTA -->
+  <!-- CTA BOKS -->
   <section class="content-box fade-in">
     <h3>Bestill gratis samtale</h3>
     <p>
@@ -130,14 +120,14 @@ document.addEventListener('click', () => {
   </section>
 
 </main>
+
+<!-- SPLIT SECTION (OM MEG) -->
 <section class="content-box split-section fade-in">
 
-  <!-- Venstre: bilde -->
   <div class="split-image">
     <img src="images/ommeg.jpg" alt="Mai Camilla Munkejord">
   </div>
 
-  <!-- Høyre: tekst -->
   <div class="split-text">
     <h2>Hei, jeg er Mai Camilla Munkejord</h2>
     <p>
@@ -158,6 +148,7 @@ document.addEventListener('click', () => {
   </div>
 
 </section>
+
 
 <footer>
   © 2025 La Masken Falle – Mai Camilla Munkejord
@@ -181,8 +172,20 @@ document.addEventListener('click', () => {
   navToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
   });
+
+  // Dropdown Toggle
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
 </script>
 
 </body>
 </html>
-

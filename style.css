@@ -1,112 +1,129 @@
+/* -------------------------------------
+   FARGER OG BASE
+-------------------------------------- */
 :root {
-  --background: #F5F2E8;   /* Lin/sandfarget bakgrunn */
-  --box: #F8E4D3;          /* Lys aprikos for alle bokser */
+  --background: #F5F2E8;    
+  --box: #F8E4D3;           
   --text: #2E2E2E;
-  --accent: #A8C3A0;       /* Salviegrønn */
-  --shadow: rgba(0, 0, 0, 0.06);
+  --accent: #A8C3A0;        
+  --shadow: rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- Grunnoppsett ---------- */
 body {
   background-color: var(--background);
   color: var(--text);
-  font-family: "Lora", Arial, sans-serif;
+  font-family: "Lora", serif;
   font-size: 17px;
-  line-height: 1.7;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
 
-/* ---------- Navigasjon ---------- */
+/* -------------------------------------
+   NAVIGASJON
+-------------------------------------- */
 .nav-header {
-  width: 100%;
-  background-color: var(--background);
   position: sticky;
   top: 0;
-  z-index: 10;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--background);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 20;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: auto;
   padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.6rem;
-  letter-spacing: 1px;
+.logo-img {
+  height: 50px;
+  border-radius: 8px;
 }
 
+/* NAVIGASJONSKNAPPER */
 .nav-links {
   display: flex;
-  gap: 1.8rem;
+  gap: 1rem;
 }
 
-.nav-links a {
+.nav-btn {
+  background: var(--background);
+  border: 2px solid rgba(0,0,0,0.15);
+  padding: 0.45rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
   color: var(--text);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
+  transition: 0.25s;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
+.nav-btn:hover {
+  background: #ffffff60;
+  transform: translateY(-2px);
 }
 
-/* Hamburger */
 .nav-toggle {
   display: none;
-  font-size: 1.8rem;
   background: none;
   border: none;
+  font-size: 2rem;
   cursor: pointer;
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  margin-top: 4rem;
-  padding: 7rem 3rem 6rem;
-  text-align: center;
-  background-color: var(--box);
-  border-radius: 16px;
-  box-shadow: 0 10px 35px var(--shadow);
+/* -------------------------------------
+   MOBILMENY
+-------------------------------------- */
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--background);
+  padding: 1rem 2rem;
 }
 
-.brand-name {
-  font-size: 4.5rem;
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
+.mobile-menu a {
+  background: var(--background);
+  border: 2px solid rgba(0,0,0,0.15);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
+  transition: .25s;
 }
 
-.tagline {
-  font-size: 1.4rem;
-  margin-bottom: 2.2rem;
-  color: #3e3e3e;
+.mobile-menu a:hover {
+  background: #ffffff60;
+  transform: translateY(-3px);
 }
 
-/* ---------- Bokser ---------- */
+.mobile-menu.active {
+  display: flex;
+}
+
+/* -------------------------------------
+   INNHOLD
+-------------------------------------- */
 .content-area {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1rem 6rem;
+  margin: auto;
+  padding: 3rem 1.5rem 6rem;
 }
 
 .content-box {
-  background-color: var(--box);
-  padding: 3rem 2.5rem;
-  margin: 5rem 0;
+  background: var(--box);
+  padding: 3rem 2rem;
   border-radius: 14px;
   box-shadow: 0 10px 30px var(--shadow);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  margin: 3.5rem 0;
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(40px);
+  transition: .8s ease;
 }
 
 .content-box.visible {
@@ -114,125 +131,85 @@ body {
   transform: translateY(0);
 }
 
-.content-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-}
-
-/* ---------- Knapp ---------- */
-.btn {
-  background-color: var(--accent);
-  border: none;
-  padding: 0.9rem 1.8rem;
-  border-radius: 6px;
-  color: var(--text);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #B7D9B0;
-  transform: translateY(-2px);
-}
-
-/* ---------- Footer ---------- */
-footer {
-  text-align: center;
-  color: var(--text);
-  padding: 4rem 0 2rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* ---------- Scroll-effekt ---------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---------- Responsivitet ---------- */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    background-color: var(--background);
-    padding: 1.5rem 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .brand-name {
-    font-size: 3rem;
-  }
-
-  .hero {
-    padding: 5rem 1.5rem 4rem;
-  }
-
-  .content-box {
-    padding: 2.2rem 1.5rem;
-  }
-}
-/* ----- Hero med bilde + tekst ----- */
+/* HERO */
 .hero-flex {
   display: flex;
   gap: 2.5rem;
   align-items: center;
-  justify-content: center;
-  text-align: left;
-}
-
-.hero-image-wrapper {
-  flex: 1;
 }
 
 .hero-image {
   width: 100%;
   border-radius: 14px;
-  box-shadow: 0 10px 30px var(--shadow);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .hero-text {
   flex: 1;
 }
 
-.hero-name {
+.brand-name {
+  font-size: 3rem;
   font-family: "Playfair Display", serif;
-  font-size: 2.2rem;
-  margin-bottom: 0.3rem;
+  margin: 0.7rem 0;
+}
+
+.hero-name {
+  font-size: 2rem;
+  font-family: "Playfair Display";
+  margin: 0;
 }
 
 .hero-title {
-  font-size: 1.2rem;
-  color: #3e3e3e;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin: 0.4rem 0 1rem;
 }
 
-/* Mobil-vennlig */
-@media (max-width: 800px) {
+/* BUTTON */
+.btn {
+  background: var(--accent);
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .25s ease;
+}
+
+.btn:hover {
+  background: #b8d8b0;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------
+   FOOTER
+-------------------------------------- */
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* -------------------------------------
+   RESPONSIVITET
+-------------------------------------- */
+
+@media (max-width: 900px) {
   .hero-flex {
     flex-direction: column;
     text-align: center;
   }
-
-  .hero-image {
-    max-width: 90%;
-  }
 }
 
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
 

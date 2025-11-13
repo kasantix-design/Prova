@@ -3,97 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coach Navn – Finn ro og klarhet</title>
+  <title>La Masken Falle</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
-  <!-- NAVIGASJON -->
-  <header class="nav-header">
-    <div class="nav-container">
-      <div class="logo">COACH NAVN</div>
+<header class="nav-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="La Masken Falle" style="height:45px;">
+      LA MASKEN FALLE
+    </a>
 
-      <nav class="nav-links" id="navMenu">
-        <a href="#om">Om</a>
-        <a href="#tjenester">Tjenester</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+    <nav class="nav-links" id="navMenu">
+      <a href="boker.html">Bøker</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
+      <a href="blogg.html">Blogg</a>
+      <a href="om-oss.html">Om Oss</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="logginn.html">Logg inn</a>
+    </nav>
 
-      <button class="nav-toggle" id="navToggle">☰</button>
-    </div>
-  </header>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
 
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcast</a>
+    <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om Oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="logginn.html">Logg inn</a>
+    <hr>
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+  </div>
+</header>
 
-  <!-- INNHOLD -->
-  <main class="content-area">
+<main class="content-area">
 
-    <!-- HERO -->
-    <section class="content-box hero fade-in">
-      <h1 class="brand-name">COACH NAVN</h1>
-      <p class="tagline">Finn ro, klarhet og retning</p>
-      <button class="btn">Bestill gratis samtale</button>
-    </section>
+  <section class="content-box hero fade-in">
+    <h1 class="brand-name">LA MASKEN FALLE</h1>
+    <p class="tagline">Sannhet. Sårbarhet. Historier som forandrer.</p>
+    <button class="btn">Les mer</button>
+  </section>
 
-    <!-- OM MEG -->
-    <section id="om" class="content-box fade-in">
-      <h3>Om meg</h3>
-      <p>
-        Jeg er sertifisert coach med bakgrunn i kommunikasjon og personlig utvikling. 
-        Mitt arbeid handler om å skape trygghet, fokus og retning i livets overganger.
-      </p>
-    </section>
+</main>
 
-    <!-- TJENESTER -->
-    <section id="tjenester" class="content-box fade-in">
-      <h3>Tjenester</h3>
-      <ul>
-        <li>1:1 coaching og samtaleterapi</li>
-        <li>Karriere- og livsretning</li>
-        <li>Mindfulness og stressmestring</li>
-      </ul>
-    </section>
+<footer>
+  © 2025 La Masken Falle
+</footer>
 
-    <!-- KONTAKT -->
-    <section id="kontakt" class="content-box fade-in">
-      <h3>Kontakt</h3>
-      <p>
-        Vil du starte reisen din? Send meg en e-post på 
-        <a href="mailto:hei@coachnavn.no">hei@coachnavn.no</a>
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2025 Coach Navn – Livscoach i Oslo
-  </footer>
-
-
-  <!-- SCRIPT: fade-in + mobilmeny -->
-  <script>
-    // Fade-in animasjon
-    const boxes = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    boxes.forEach(box => observer.observe(box));
-
-    // Hamburger meny
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
-
+<script src="main.js"></script>
 </body>
 </html>

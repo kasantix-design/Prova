@@ -20,14 +20,23 @@
     </a>
   </div>
 
-  <!-- Navigasjonslinje -->
+ <!-- Navigasjonslinje -->
   <div class="nav-row">
     <nav class="nav-links" id="navMenu">
-      <button class="nav-btn" onclick="location.href='index.html'">Hjem</button>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+        </div>
+      </div>
+
       <button class="nav-btn" onclick="location.href='boker.html'">Bøker</button>
       <button class="nav-btn" onclick="location.href='podcast.html'">Podcaster</button>
-      <button class="nav-btn" onclick="location.href='skrivekurs.html'">Skrivekurs</button>
-      <button class="nav-btn" onclick="location.href='tekstveiledning.html'">Tekstveiledning</button>
       <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
       <button class="nav-btn" onclick="location.href='blogg.html'">Blogg</button>
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>

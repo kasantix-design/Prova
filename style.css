@@ -188,4 +188,51 @@ footer {
     padding: 2.2rem 1.5rem;
   }
 }
+/* ----- Hero med bilde + tekst ----- */
+.hero-flex {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero-title {
+  font-size: 1.2rem;
+  color: #3e3e3e;
+  margin-bottom: 1rem;
+}
+
+/* Mobil-vennlig */
+@media (max-width: 800px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 90%;
+  }
+}
+
 

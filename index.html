@@ -10,16 +10,18 @@
 
 <body>
 
-<!-- NAVIGASJON -->
+<!-- HEADER -->
 <header class="nav-header">
+
+  <!-- Logo-linje -->
   <div class="nav-container">
-
-    <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="images/logo_navn.jpg" alt="La Masken Falle logo" class="logo-img">
+      <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
     </a>
+  </div>
 
-    <!-- Desktop navigasjon -->
+  <!-- Navigasjonsknapper på linjen under logo -->
+  <div class="nav-row">
     <nav class="nav-links" id="navMenu">
       <button class="nav-btn" onclick="location.href='boker.html'">Bøker</button>
       <button class="nav-btn" onclick="location.href='podcast.html'">Podcaster</button>
@@ -32,7 +34,6 @@
       <button class="nav-btn" onclick="location.href='logginn.html'">Logg inn</button>
     </nav>
 
-    <!-- Hamburger -->
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
@@ -48,34 +49,38 @@
     <a href="kontakt.html">Kontakt</a>
     <a href="logginn.html">Logg inn</a>
   </div>
+
 </header>
 
+
 <!-- INNHOLD -->
+
 <main class="content-area">
 
   <!-- HERO -->
   <section class="content-box fade-in hero-flex">
 
-    
+    <div class="hero-image-wrapper">
+      <img 
+        src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148562089/images/4f2d0e-312a-16af-3c5b-4b5eb5623b3c_d56971a9-4d7a-4f04-86da-c22dbcfb1035.png"
+        alt="Mai Camilla Munkejord"
+        class="hero-image">
+    </div>
 
     <div class="hero-text">
       <h2 class="hero-name">Mai Camilla Munkejord</h2>
       <p class="hero-title">forfatter · podcaster · kursholder</p>
-
       <h1 class="brand-name">LA MASKEN FALLE</h1>
-
-      <p class="tagline">
-        Et rom for helhjertet ærlighet, refleksjon og indre reise.
-      </p>
+      <p class="tagline">Et rom for helhjertet ærlighet, refleksjon og indre reise.</p>
     </div>
 
   </section>
 
-  <!-- BOKS 2 (CTA) -->
+  <!-- BOKS 2 – CTA -->
   <section class="content-box fade-in">
     <h3>Bestill gratis samtale</h3>
     <p>
-      Trenger du veiledning, klarhet eller støtte? Du er hjertelig velkommen til en gratis samtale.
+      Utforsk dine mønstre, spørsmål og ønsker – i en trygg og gratis samtale.
     </p>
     <button class="btn">Bestill gratis samtale</button>
   </section>
@@ -84,9 +89,9 @@
   <section class="content-box fade-in">
     <h3>Om La Masken Falle</h3>
     <p>
-      La Masken Falle er en portal for selvutvikling, indre arbeid og ærlige samtaler.
-      Gjennom bøker, kurs og podcast inviterer Mai Camilla deg til å utforske det som
-      beveger seg i deg – med varme, dybde og modig sårbarhet.
+      La Masken Falle er et sted for indre arbeid, selvutforskning og ekte samtaler.
+      Gjennom kurs, podcast og bøker inviterer Mai Camilla deg til å leve mer sant
+      og helhjertet.
     </p>
   </section>
 
@@ -94,8 +99,7 @@
   <section class="content-box fade-in">
     <h3>Podcast</h3>
     <p>
-      LA MASKEN FALLE er en ærlig podkast om traumer, relasjoner, oppvåkning og
-      heling – laget for deg som søker dypere sannhet og indre retning.
+      En ærlig podkast om traumer, nære relasjoner, oppvåkning og indre heling.
     </p>
     <button class="btn" onclick="location.href='podcast.html'">Lytt til podcast</button>
   </section>
@@ -104,8 +108,8 @@
   <section class="content-box fade-in">
     <h3>Bøker</h3>
     <p>
-      Historiene til Mai Camilla berører, beveger og inspirerer – skrevet for mennesker
-      som ønsker å leve mer sant, fritt og helhjertet.
+      Bøkene til Mai Camilla er skrevet for deg som ønsker å vokse, heles og våge
+      å være deg selv.
     </p>
     <button class="btn" onclick="location.href='boker.html'">Utforsk bøkene</button>
   </section>
@@ -116,12 +120,16 @@
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
 
+
+<!-- SCRIPT -->
 <script>
   // fade-in
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
   boxes.forEach(b => obs.observe(b));
 
   // hamburger

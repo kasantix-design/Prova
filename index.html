@@ -3,73 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Masken Falle – Mai Camilla Munkejord</title>
+  <title>Coach Navn – Finn ro og klarhet</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- 🔹 NAVIGASJON -->
-<header class="nav-header">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="La Masken Falle" style="height:45px;">
-      LA MASKEN FALLE
-    </a>
-
-    <nav class="nav-links" id="navMenu">
-      <a href="boker.html">Bøker</a>
-      <a href="podcast.html">Podcast</a>
-      <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
-      <a href="blogg.html">Blogg</a>
-      <a href="om-oss.html">Om Oss</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="logginn.html">Logg inn</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcast</a>
-    <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
-    <a href="blogg.html">Blogg</a>
-    <a href="om-oss.html">Om Oss</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="logginn.html">Logg inn</a>
-    <hr>
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-  </div>
-</header>
-
-
-<!-- 🔹 INNHOLD -->
-<main class="content-area">
-
-  <!-- HERO MED BILDE + TEKST -->
-  <section class="content-box hero fade-in hero-flex">
-
-    <div class="hero-image-wrapper">
-      <img 
-        src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148562089/images/4f2d0e-312a-16af-3c5b-4b5eb5623b3c_d56971a9-4d7a-4f04-86da-c22dbcfb1035.png" 
-        alt="Mai Camilla Munkejord" 
-        class="hero-image">
+  <!-- Navigasjon -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">COACH NAVN</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="#om">Om</a>
+        <a href="#tjenester">Tjenester</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny">
+        ☰
+      </button>
     </div>
+  </header>
 
-    <div class="hero-text">
-      <h2 class="hero-name">Mai Camilla Munkejord</h2>
-      <p class="hero-title">forfatter, podcaster og kursholder</p>
+  <main class="content-area">
+    <!-- HERO -->
+    <section class="content-box hero fade-in">
+      <h1 class="brand-name">COACH NAVN</h1>
+      <p class="tagline">Finn ro, klarhet og retning</p>
+      <button class="btn">Bestill gratis samtale</button>
+    </section>
 
-      <h1 class="brand-name" style="margin-top: 2rem;">
-        LA MASKEN FALLE
-      </h1>
-    </div>
+    <!-- OM -->
+    <section id="om" class="content-box fade-in">
+      <h3>Om meg</h3>
+      <p>Jeg er sertifisert coach med bakgrunn i kommunikasjon og personlig utvikling. Mitt arbeid handler om å skape trygghet, fokus og retning i livets overganger.</p>
+    </section>
 
-  </section>
+    <!-- TJENESTER -->
+    <section id="tjenester" class="content-box fade-in">
+      <h3>Tjenester</h3>
+      <ul>
+        <li>1:1 coaching og samtaleterapi</li>
+        <li>Karriere- og livsretning</li>
+        <li>Mindfulness og stressmestring</li>
+      </ul>
+    </section>
 
+    <!-- KONTAKT -->
+    <section id="kontakt" class="content-box fade-in">
+      <h3>Kontakt</h3>
+      <p>Vil du starte reisen din? Send meg en e-post på 
+        <a href="mailto:hei@coachnavn.no">hei@coachnavn.no</a>
+      </p>
+    </section>
+  </main>
 
-  <!-- BOKS 2: MED KNAPP -->
-  <sectio
+  <footer>
+    © 2025 Coach Navn – Livscoach i Oslo
+  </footer>
+
+  <!-- Scroll- og meny-script -->
+  <script>
+    // Fade-in ved scroll
+    const boxes = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    boxes.forEach(box => observer.observe(box));
+
+    // Hamburger-meny
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

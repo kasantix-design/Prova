@@ -1,33 +1,96 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bøker – La Masken Falle</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="nav-header">
+
+  <!-- Logo-linje -->
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
+    </a>
+  </div>
+
+  <!-- Navigasjonslinje -->
+  <div class="nav-row">
+    <nav class="nav-links" id="navMenu">
+      <button class="nav-btn" onclick="location.href='index.html'">Hjem</button>
+      <button class="nav-btn" onclick="location.href='boker.html'">Bøker</button>
+      <button class="nav-btn" onclick="location.href='podcast.html'">Podcaster</button>
+      <button class="nav-btn" onclick="location.href='skrivekurs.html'">Skrivekurs</button>
+      <button class="nav-btn" onclick="location.href='tekstveiledning.html'">Tekstveiledning</button>
+      <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
+      <button class="nav-btn" onclick="location.href='blogg.html'">Blogg</button>
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='logginn.html'">Logg inn</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+
+  <!-- Mobilmeny -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Hjem</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="logginn.html">Logg inn</a>
+  </div>
+
+</header>
+
+<!-- ★ HERO-BOKS MED TITTEL + INTRO -->
 <main class="content-area">
 
-  <!-- HERO: kun tekst -->
   <section class="content-box hero fade-in" style="padding:4rem 2rem; text-align:center;">
-      <h1 class="brand-name">Bøker av Mai Camilla Munkejord</h1>
+    <h1 class="brand-name" style="margin-bottom:1rem;">
+      Bøker av Mai Camilla Munkejord
+    </h1>
+
+    <p style="max-width:650px; margin:auto;">
+      Her finner du bøkene til Mai Camilla Munkejord – om traumer,
+      selvutvikling, relasjoner og spirituell oppvåkning.
+    </p>
   </section>
 
-  <!-- BØKER PÅ LINJE (utenfor hero-boksen) -->
+  <!-- ★ BØKER PÅ LINJE (horisontal rad) -->
   <section class="fade-in" style="margin-top:2rem;">
     <div class="book-row">
 
-      <!-- 1 -->
+      <!-- 1: La Masken Falle -->
       <a class="book-item" href="#">
         <img src="images/bok-la-masken-falle.webp" alt="La Masken Falle">
         <h4>La Masken Falle</h4>
       </a>
 
-      <!-- 2 -->
+      <!-- 2: Slipp meg fri -->
       <a class="book-item" href="#">
         <img src="images/bok-slipp-meg-fri.webp" alt="Slipp meg fri – hold meg fast">
         <h4>Slipp meg fri – hold meg fast</h4>
       </a>
 
-      <!-- 3 -->
+      <!-- 3: Morssåret -->
       <a class="book-item" href="#">
         <img src="images/bok-morssaret.webp" alt="Morssåret">
         <h4>Morssåret</h4>
       </a>
 
-      <!-- 4 -->
+      <!-- 4: Den jeg er -->
       <a class="book-item" href="#">
         <img src="images/bok-den-jeg-er.webp" alt="Den jeg er">
         <h4>Den jeg er</h4>
@@ -37,3 +100,24 @@
   </section>
 
 </main>
+
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+<script>
+  // Fade-in
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  boxes.forEach(b => obs.observe(b));
+
+  // Hamburger
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+</script>
+
+</body>
+</html>

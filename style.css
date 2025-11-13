@@ -1,7 +1,6 @@
 /* -------------------------------------
    Farger og base
 -------------------------------------- */
-
 :root {
   --background: #F5F2E8;
   --box: #F8E4D3;
@@ -33,22 +32,27 @@ body {
 .nav-container {
   max-width: 1100px;
   margin: auto;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .logo-img {
-  height: 50px;
+  height: 55px;
   width: auto;
   border-radius: 6px;
 }
 
-/* Rad nr 2 – knapper under logo */
+/* Knappelinjen */
 .nav-row {
   max-width: 1100px;
   margin: auto;
   padding: 0.4rem 2rem 0.6rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
   gap: 0.4rem;
 }
 
@@ -70,13 +74,50 @@ body {
   transform: translateY(-2px);
 }
 
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 38px;
+  background: var(--background);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 0.5rem;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.dropdown-content a:hover {
+  background: #ffffff60;
+}
+
 /* Hamburger */
 .nav-toggle {
   display: none;
   background: none;
   border: none;
   font-size: 2rem;
-  margin-left: 0.7rem;
   cursor: pointer;
 }
 
@@ -85,6 +126,10 @@ body {
   display: none;
   flex-direction: column;
   padding: 1rem 2rem;
+}
+
+.mobile-menu.active {
+  display: flex;
 }
 
 .mobile-menu a {
@@ -96,16 +141,6 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: var(--text);
-  transition: .25s;
-}
-
-.mobile-menu a:hover {
-  background: #ffffff60;
-  transform: translateY(-3px);
-}
-
-.mobile-menu.active {
-  display: flex;
 }
 
 /* -------------------------------------
@@ -135,7 +170,7 @@ body {
 }
 
 /* -------------------------------------
-   Standard HERO (side-til-side layout)
+   HERO
 -------------------------------------- */
 
 .hero-flex {
@@ -148,6 +183,10 @@ body {
   width: 100%;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero-name {
@@ -165,91 +204,6 @@ body {
   font-size: 3rem;
   font-family: "Playfair Display";
   margin: 0.7rem 0;
-}
-
-/* -------------------------------------
-   HERO med overlay-bilde (ny layout)
--------------------------------------- */
-
-.hero-overlay {
-  position: relative;
-  padding: 5rem 2rem;
-  min-height: 420px;
-  overflow: hidden;
-}
-
-.hero-img-wrap {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  opacity: 0.25;
-}
-
-.hero-img-small {
-  width: 250px;
-  border-radius: 12px;
-  filter: grayscale(20%);
-}
-
-.hero-overlay-text {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-}
-
-/* Mer typografi for overlay */
-.hero-overlay-text .hero-name {
-  font-family: "Playfair Display";
-  font-size: 2.2rem;
-  margin-bottom: 0.2rem;
-}
-
-.hero-overlay-text .hero-title {
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.hero-overlay-text .brand-name {
-  font-size: 3.2rem;
-  font-family: "Playfair Display";
-  margin: 1rem 0;
-}
-
-.hero-overlay-text .tagline {
-  font-size: 1.25rem;
-  color: #333;
-}
-
-/* -------------------------------------
-   Bokoppsett (for boker.html)
--------------------------------------- */
-
-.book-flex {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.book-image {
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.book-details h3 {
-  font-family: "Playfair Display";
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 800px) {
-  .book-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-  .book-image {
-    width: 60%;
-  }
 }
 
 /* -------------------------------------
@@ -273,6 +227,27 @@ body {
 }
 
 /* -------------------------------------
+   Split section (OM MEG)
+-------------------------------------- */
+
+.split-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.split-image,
+.split-text {
+  width: 50%;
+}
+
+.split-image img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* -------------------------------------
    Footer
 -------------------------------------- */
 
@@ -284,13 +259,19 @@ footer {
 }
 
 /* -------------------------------------
-   Responsivitet
+   Mobil
 -------------------------------------- */
 
 @media (max-width: 900px) {
-  .hero-flex {
+  .hero-flex,
+  .split-section {
     flex-direction: column;
     text-align: center;
+  }
+
+  .split-image,
+  .split-text {
+    width: 100%;
   }
 }
 
@@ -302,85 +283,3 @@ footer {
     display: block;
   }
 }
-.book-row {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 1rem 0;
-}
-
-.book-item {
-  text-decoration: none;
-  color: var(--text);
-  text-align: center;
-  width: 200px;
-  flex: 0 0 auto;
-}
-
-.book-item img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px var(--shadow);
-  transition: transform .25s;
-}
-
-.book-item img:hover {
-  transform: translateY(-6px);
-}
-
-.book-item h4 {
-  margin-top: 0.7rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-/* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown button */
-.dropdown-btn {
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  color: #333;
-  font-family: inherit;
-}
-
-/* Dropdown menu */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 180px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 1000;
-  text-align: left;
-}
-
-/* Dropdown items */
-.dropdown-content a {
-  display: block;
-  padding: 0.7rem 1rem;
-  text-decoration: none;
-  color: #222;
-  font-size: 0.95rem;
-}
-
-.dropdown-content a:hover {
-  background: #f2f2f2;
-}
-
-/* Show dropdown when active */
-.dropdown.show .dropdown-content {
-  display: block;
-}
-
-

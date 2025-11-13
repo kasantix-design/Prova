@@ -302,4 +302,37 @@ footer {
     display: block;
   }
 }
+.book-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.book-item {
+  text-decoration: none;
+  color: var(--text);
+  text-align: center;
+  width: 200px;
+  flex: 0 0 auto;
+}
+
+.book-item img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: transform .25s;
+}
+
+.book-item img:hover {
+  transform: translateY(-6px);
+}
+
+.book-item h4 {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
 

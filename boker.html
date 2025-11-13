@@ -1,1 +1,27 @@
-<html><body>boker</body></html>
+.book-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.book-image {
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.book-details h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .book-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book-image {
+    width: 60%;
+  }
+}

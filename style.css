@@ -327,3 +327,52 @@ footer {
     width: 100%;
   }
 }
+/* GRØNN FORM-BOKS */
+.form-green-box {
+  background: var(--accent);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-top: 2rem;
+  color: white;
+}
+
+.form-green-box label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: white;
+}
+
+.form-green-box input,
+.form-green-box textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+.form-green-box textarea {
+  resize: vertical;
+}
+
+/* Grønn knapp, sterkere variant */
+.form-btn-green {
+  background: #8FB98A !important;
+  color: #2E2E2E;
+  font-weight: 700;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.form-btn-green:hover {
+  background: #7FAE7B !important;
+  transform: translateY(-2px);
+}
+

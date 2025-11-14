@@ -11,97 +11,106 @@
 
 <body>
 
-<!-- Dropdown 1 -->
-  <div class="dropdown">
-    <button class="nav-btn dropdown-btn">Tjenester ▾</button>
-    <div class="dropdown-content">
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="tekstveiledning.html">Tekstveiledning</a>
-      <a href="boker.html">Bøker</a>
-      <a href="podcast.html">Podcaster</a>
-      <a href="blogg.html">Blogg</a>
+<!-- NAVBAR (identisk med index.html) -->
+<header class="nav-header">
+  <div class="nav-row">
+
+    <!-- VENSTRE: LOGO + DROPDOWNS -->
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
+      </a>
+
+      <!-- Dropdown 1 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+          <a href="blogg.html">Blogg</a>
+        </div>
+      </div>
+
+      <!-- Dropdown 2 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Dropdown 2 -->
-  <div class="dropdown">
-    <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
-    <div class="dropdown-content">
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="foredrag.html">Foredrag</a>
-      <a href="konferanser.html">Konferanser</a>
-    </div>
-  </div>
-
-  <!-- Enkle knapper -->
-  <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
-  <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-  <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
-
-</nav>
+    <!-- HØYRE -->
+    <nav class="nav-links" id="navMenu">
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+    </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
-  <!-- MOBILMENY -->
+  <!-- Mobilmeny -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="skrivekurs.html">Skrivekurs</a>
     <a href="tekstveiledning.html">Tekstveiledning</a>
     <a href="boker.html">Bøker</a>
     <a href="podcast.html">Podcaster</a>
     <a href="blogg.html">Blogg</a>
-    <a href="om-oss.html">Om oss</a>
     <a href="kontakt.html">Kontakt</a>
+    <a href="om-oss.html">Om oss</a>
     <a href="medlem.html">Medlem</a>
   </div>
 </header>
 
-<!-- HERO-SEKSJON -->
-<main class="content-area">
 
-  <section class="content-box hero fade-in" style="text-align:center;">
-    <h1 class="brand-name glitter-slow">Bøker av Mai Camilla Munkejord</h1>
-    <p style="max-width:650px; margin:auto;">
-      Her finner du bøkene som inviterer til innsikt, vekst og indre transformasjon.
-    </p>
-  </section>
+<!-- HERO -->
+<section class="content-box fade-in" style="text-align:center;">
+  <h1 class="brand-name glitter-slow">Bøker av Mai Camilla Munkejord</h1>
+  <p style="max-width:650px; margin:auto;">
+    Utforsk bøker skrevet for deg som søker innsikt, ro, indre kraft og heling.
+  </p>
+</section>
 
-  <!-- BOKGRID -->
-  <section class="content-box fade-in">
 
-    <div class="book-grid">
+<!-- ⭐ BOK-GRID -->
+<main class="content-area fade-in">
 
-      <!-- BOK 1 -->
-      <div class="book-item">
-        <img src="images/bok1.jpg" alt="Tittel 1">
-        <h3>Tittel 1</h3>
-        <a class="btn" href="#">Bestill her</a>
-      </div>
+  <div class="book-grid">
 
-      <!-- BOK 2 -->
-      <div class="book-item">
-        <img src="images/bok2.jpg" alt="Tittel 2">
-        <h3>Tittel 2</h3>
-        <a class="btn" href="#">Bestill her</a>
-      </div>
-
-      <!-- BOK 3 -->
-      <div class="book-item">
-        <img src="images/bok3.jpg" alt="Tittel 3">
-        <h3>Tittel 3</h3>
-        <a class="btn" href="#">Bestill her</a>
-      </div>
-
-      <!-- BOK 4 -->
-      <div class="book-item">
-        <img src="images/bok4.jpg" alt="Tittel 4">
-        <h3>Tittel 4</h3>
-        <a class="btn" href="#">Bestill her</a>
-      </div>
-
+    <!-- Bok 1 -->
+    <div class="book-item">
+      <img src="images/bok1.jpg" alt="Tittel 1">
+      <h3>Tittel 1</h3>
+      <button class="btn">Bestill her</button>
     </div>
 
-  </section>
+    <!-- Bok 2 -->
+    <div class="book-item">
+      <img src="images/bok2.jpg" alt="Tittel 2">
+      <h3>Tittel 2</h3>
+      <button class="btn">Bestill her</button>
+    </div>
+
+    <!-- Bok 3 -->
+    <div class="book-item">
+      <img src="images/bok3.jpg" alt="Tittel 3">
+      <h3>Tittel 3</h3>
+      <button class="btn">Bestill her</button>
+    </div>
+
+    <!-- Bok 4 -->
+    <div class="book-item">
+      <img src="images/bok4.jpg" alt="Tittel 4">
+      <h3>Tittel 4</h3>
+      <button class="btn">Bestill her</button>
+    </div>
+
+  </div>
 
 </main>
 
@@ -109,13 +118,14 @@
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
 
-<!-- SCRIPT -->
+
+<!-- SCRIPTS -->
 <script>
-  // fade-in
+  // fade
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.15 });
   boxes.forEach(b => obs.observe(b));
 
   // hamburger
@@ -123,19 +133,59 @@
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
-  // dropdowns
+  // dropdown
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       this.parentElement.classList.toggle('show');
     });
   });
-
   document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
   });
 </script>
 
+
+<!-- ⭐ EXTRA CSS (legg i style.css senere hvis ønsket) -->
+<style>
+  /* BOK-GRID RESPONSIV */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .book-item img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .book-item h3 {
+    margin: 1rem 0 0.6rem;
+    font-size: 1.1rem;
+    color: #2E2E2E;
+  }
+
+  /* Nettbrett – 2 kolonner */
+  @media (max-width: 900px) {
+    .book-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobil – 1 kolonne */
+  @media (max-width: 600px) {
+    .book-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 </body>
 </html>
-

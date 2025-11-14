@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foredrag – La Masken Falle</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="nav-header">
+  <div class="nav-row">
+
+    <!-- Logo -->
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img">
+      </a>
+    </div>
+
+    <!-- NAV-KNAPPER -->
+    <nav class="nav-links" id="navMenu">
+
+      <!-- Dropdown 1 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+          <a href="blogg.html">Blogg</a>
+        </div>
+      </div>
+
+      <!-- Dropdown 2 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
+        </div>
+      </div>
+
+      <!-- Enkle knapper -->
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+
+  <!-- Mobilmeny -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="medlem.html">Medlem</a>
+  </div>
+</header>
+
+
+<!-- HERO – identisk layout som index -->
+<main class="content-area">
+<section class="content-box fade-in hero-flex">
+
+  <!-- Bilde venstre -->
+  <img src="images/mai2.webp" 
+       alt="Mai Camilla Munkejord" 
+       class="hero-image">
+
+  <!-- Tekst høyre -->
+  <div class="hero-text">
+    <h2 class="hero-name">Mai Camilla Munkejord</h2>
+    <p class="hero-title">forfatter · podcaster · foredragsholder</p>
+
+    <h1 class="brand-name glitter-slow">Foredrag</h1>
+
+    <p>
+      Foredrag med varme, klarhet og dybde – om traumer, heling, relasjoner,
+      nevrodivergens, indre arbeid og autentisitet.  
+    </p>
+  </div>
+
+</section>
+
+
+<!-- INNHOLD -->
+<section class="content-box fade-in">
+  <h2>Hva kan jeg bidra med?</h2>
+
+  <p>
+    Jeg holder foredrag for organisasjoner, skoler, konferanser, fagmiljøer,
+    hjelpeapparat og grupper som ønsker innsikt i hvordan traumer, relasjoner,
+    stress, nevrodivergens og indre arbeid påvirker livene våre – både personlig
+    og profesjonelt.
+  </p>
+
+  <p>
+    Med kombinasjon av faglig kunnskap og personlig erfaring presenterer jeg
+    ærlig, trygt og relasjonsnært, med fokus på mening, forståelse og
+    praktiske verktøy deltakerne kan ta med seg.
+  </p>
+</section>
+
+
+<section class="content-box fade-in">
+  <h2>Eksempler på temaer</h2>
+
+  <ul>
+    <li>🎤 Traumer: forståelse, helingsprosesser og nervesystemet</li>
+    <li>🎤 Nevrodivergens (ADHD/autisme) og stressregulering</li>
+    <li>🎤 Grenser, samspill og relasjonell trygghet</li>
+    <li>🎤 Hvordan leve mer autentisk i en krevende verden</li>
+    <li>🎤 Foreldrerollen og emosjonell trygghet</li>
+    <li>🎤 Sårbarhet og historiefortelling som heling</li>
+  </ul>
+</section>
+
+
+<section class="content-box fade-in">
+  <h2>Pris og bestilling</h2>
+
+  <p>
+    Pris for foredrag varierer etter sted, varighet og type arrangement.
+    Ta gjerne kontakt for et uforpliktende tilbud.
+  </p>
+
+  <button class="btn" onclick="location.href='kontakt.html'">Send forespørsel</button>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+
+<!-- SCRIPT -->
+<script>
+  // fade-in
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
+
+  // hamburger
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  // dropdowns
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+</script>
+
+</body>
+</html>

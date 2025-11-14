@@ -13,18 +13,15 @@
 <!-- HEADER -->
 <header class="nav-header">
 
-  <!-- Logo-linje -->
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
-    </a>
-  </div>
-
-  <!-- Navigasjonslinje -->
   <div class="nav-row">
-    <nav class="nav-links" id="navMenu">
 
-      <!-- DROPDOWN 1 — TJENESTER -->
+    <!-- VENSTRE -->
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
+      </a>
+
+      <!-- DROPDOWN 1 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -36,7 +33,7 @@
         </div>
       </div>
 
-      <!-- DROPDOWN 2 — ARRANGEMENTER -->
+      <!-- DROPDOWN 2 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -45,18 +42,20 @@
           <a href="konferanser.html">Konferanser</a>
         </div>
       </div>
+    </div>
 
-      <!-- ENKLE KNAPPER -->
+    <!-- HØYRE -->
+    <nav class="nav-links">
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
       <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
-
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
+
   </div>
 
-  <!-- Mobilmeny -->
+  <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
 
     <div class="mobile-dropdown">
@@ -78,67 +77,70 @@
     <a href="om-oss.html">Om oss</a>
     <a href="kontakt.html">Kontakt</a>
     <a href="medlem.html">Medlem</a>
+
   </div>
 
 </header>
 
 
-<!-- ★ HERO-BOKS MED TITTEL + INTRO -->
+
+<!-- HERO -->
 <main class="content-area">
 
   <section class="content-box hero fade-in" style="padding:4rem 2rem; text-align:center;">
-    <h1 class="brand-name" style="margin-bottom:1rem;">
-      Våre bøker
-    </h1>
-
+    <h1 class="brand-name" style="margin-bottom:1rem;">Våre bøker</h1>
     <p style="max-width:650px; margin:auto;">
       Utforsk bøker skrevet for deg som ønsker vekst, innsikt og indre transformasjon.
     </p>
   </section>
 
-  <!-- ⭐ BØKER PÅ HORISONTAL RAD -->
-  <section class="fade-in" style="margin-top:2rem;">
-    <div class="book-row">
 
-      <!-- 1 -->
-      <div class="book-item">
-        <h4>Tittel 1</h4>
-        <img src="images/bok1.jpg" alt="Tittel 1">
-        <a class="book-btn" href="#">Bestill her</a>
-      </div>
+<!-- ⭐ HORISONTAL BOKRAD -->
+<section class="fade-in" style="margin-top:2rem;">
+  <div class="book-row">
 
-      <!-- 2 -->
-      <div class="book-item">
-        <h4>Tittel 2</h4>
-        <img src="images/bok2.jpg" alt="Tittel 2">
-        <a class="book-btn" href="#">Bestill her</a>
-      </div>
-
-      <!-- 3 -->
-      <div class="book-item">
-        <h4>Tittel 3</h4>
-        <img src="images/bok3.jpg" alt="Tittel 3">
-        <a class="book-btn" href="#">Bestill her</a>
-      </div>
-
-      <!-- 4 -->
-      <div class="book-item">
-        <h4>Tittel 4</h4>
-        <img src="images/bok4.jpg" alt="Tittel 4">
-        <a class="book-btn" href="#">Bestill her</a>
-      </div>
-
+    <!-- 1 -->
+    <div class="book-item">
+      <h4>Tittel 1</h4>
+      <img src="images/bok1.jpg" alt="Tittel 1">
+      <a class="btn" href="#">Bestill her</a>
     </div>
-  </section>
+
+    <!-- 2 -->
+    <div class="book-item">
+      <h4>Tittel 2</h4>
+      <img src="images/bok2.jpg" alt="Tittel 2">
+      <a class="btn" href="#">Bestill her</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="book-item">
+      <h4>Tittel 3</h4>
+      <img src="images/bok3.jpg" alt="Tittel 3">
+      <a class="btn" href="#">Bestill her</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="book-item">
+      <h4>Tittel 4</h4>
+      <img src="images/bok4.jpg" alt="Tittel 4">
+      <a class="btn" href="#">Bestill her</a>
+    </div>
+
+  </div>
+</section>
 
 </main>
+
 
 <footer>
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
 
+
+<!-- SCRIPT -->
 <script>
-  // Fade-in animasjon
+  // Fade-in
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -148,8 +150,4 @@
   // Hamburger
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
-</script>
-
-</body>
-</html>
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('acti

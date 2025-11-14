@@ -77,33 +77,45 @@
     </p>
   </section>
 
-  <!-- ★ BØKER PÅ LINJE (horisontal rad) -->
+  <!-- ⭐ BØKER PÅ HORISONTAL RAD -->
   <section class="fade-in" style="margin-top:2rem;">
     <div class="book-row">
 
       <!-- 1: La Masken Falle -->
-      <a class="book-item" href="#">
-        <img src="images/lamaskenfalle.jpg" alt="La Masken Falle">
+      <div class="book-item">
         <h4>La Masken Falle</h4>
-      </a>
+        <a href="la_masken_falle.html">
+          <img src="images/lamaskenfalle.jpg" alt="La Masken Falle">
+        </a>
+        <a class="book-btn" href="la_masken_falle.html">Les mer og bestill</a>
+      </div>
 
       <!-- 2: Slipp meg fri -->
-      <a class="book-item" href="#">
-        <img src="images/frifast.jpg" alt="Slipp meg fri – hold meg fast">
+      <div class="book-item">
         <h4>Slipp meg fri – hold meg fast</h4>
-      </a>
+        <a href="slipp_meg_fri.html">
+          <img src="images/frifast.jpg" alt="Slipp meg fri – hold meg fast">
+        </a>
+        <a class="book-btn" href="slipp_meg_fri.html">Les mer og bestill</a>
+      </div>
 
       <!-- 3: Morssåret -->
-      <a class="book-item" href="#">
-        <img src="images/morssåret.jpg" alt="Morssåret">
+      <div class="book-item">
         <h4>Morssåret</h4>
-      </a>
+        <a href="morssaret.html">
+          <img src="images/morssåret.jpg" alt="Morssåret">
+        </a>
+        <a class="book-btn" href="morssaret.html">Les mer og bestill</a>
+      </div>
 
       <!-- 4: Den jeg er -->
-      <a class="book-item" href="#">
-        <img src="images/denjeger.jpg" alt="Den jeg er">
+      <div class="book-item">
         <h4>Den jeg er</h4>
-      </a>
+        <a href="den_jeg_er.html">
+          <img src="images/denjeger.jpg" alt="Den jeg er">
+        </a>
+        <a class="book-btn" href="den_jeg_er.html">Les mer og bestill</a>
+      </div>
 
     </div>
   </section>
@@ -115,7 +127,7 @@
 </footer>
 
 <script>
-  // Fade-in
+  // Fade-in animasjon
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

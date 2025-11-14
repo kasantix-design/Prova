@@ -1,1 +1,138 @@
-<html><body>blogg</body></html>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogg – La Masken Falle</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="nav-header">
+  <div class="nav-row">
+
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img">
+      </a>
+    </div>
+
+    <nav class="nav-links" id="navMenu">
+
+      <!-- Dropdown 1 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+          <a href="blogg.html">Blogg</a>
+        </div>
+      </div>
+
+      <!-- Dropdown 2 -->
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+        <div class="dropdown-content">
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
+        </div>
+      </div>
+
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+
+  <!-- Mobil -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="medlem.html">Medlem</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="content-box fade-in" style="text-align:center;">
+  <h1 class="brand-name glitter-slow">Blogg</h1>
+  <p style="max-width:650px; margin:auto;">
+    Tekster om heling, indre arbeid, relasjoner, autentisitet – og alt livet rommer når vi våger å gå innover.
+  </p>
+</section>
+
+<!-- BLOGGINNHOLD -->
+<main class="content-area fade-in">
+
+  <!-- Bloggrutenett -->
+  <div class="book-grid">
+
+    <!-- Post 1 -->
+    <div class="book-item">
+      <img src="images/blogg1.webp" alt="Blogginnlegg 1">
+      <h3>Å våge å falle – og reise seg igjen</h3>
+      <p>En tekst om sårbarhet, mot og hva som egentlig skjer når vi slipper kontrollen.</p>
+      <button class="btn">Les mer</button>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="book-item">
+      <img src="images/blogg2.webp" alt="Blogginnlegg 2">
+      <h3>Når kroppen husker – og sjelen hvisker</h3>
+      <p>Om traumer, heling og det mystiske språket kroppen snakker til oss gjennom.</p>
+      <button class="btn">Les mer</button>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="book-item">
+      <img src="images/blogg3.webp" alt="Blogginnlegg 3">
+      <h3>Autentisitetens tid er nå</h3>
+      <p>Hvorfor vi ikke lenger kan leve bak maskene våre – og hvordan vi trer frem.</p>
+      <button class="btn">Les mer</button>
+    </div>
+
+    <!-- Legg gjerne inn flere senere -->
+
+  </div>
+
+</main>
+
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  const boxes=document.querySelectorAll('.fade-in');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.12});
+  boxes.forEach(b=>obs.observe(b));
+
+  const navToggle=document.getElementById('navToggle');
+  const mobileMenu=document.getElementById('mobileMenu');
+  navToggle.addEventListener('click',()=>mobileMenu.classList.toggle('active'));
+
+  document.querySelectorAll('.dropdown-btn').forEach(btn=>{
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('.dropdown').forEach(d=>d.classList.remove('show')));
+</script>
+
+</body>
+</html>

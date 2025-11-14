@@ -20,23 +20,23 @@
     </a>
   </div>
 
- <!-- Navigasjonslinje -->
+  <!-- Navigasjonslinje -->
   <div class="nav-row">
     <nav class="nav-links" id="navMenu">
 
-      <!-- DROPDOWN (Tjenester) -->
+      <!-- DROPDOWN 1 — TJENESTER -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
           <a href="skrivekurs.html">Skrivekurs</a>
           <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
           <a href="podcast.html">Podcaster</a>
           <a href="blogg.html">Blogg</a>
-          <a href="boker.html">Bøker</a>
         </div>
       </div>
 
-      <!-- DROPDOWN (Arrangementer) -->
+      <!-- DROPDOWN 2 — ARRANGEMENTER -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -46,17 +46,10 @@
         </div>
       </div>
 
+      <!-- ENKLE KNAPPER -->
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-
-      <!-- MEDLEM -->
-      <div class="dropdown">
-        <button class="nav-btn dropdown-btn">Medlem ▾</button>
-        <div class="dropdown-content">
-          <a href="logginn.html">Logg inn</a>
-          <a href="kursportal.html">Mine kurs</a>
-        </div>
-      </div>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
 
     </nav>
 
@@ -65,18 +58,30 @@
 
   <!-- Mobilmeny -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Hjem</a>
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcaster</a>
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-    <a href="blogg.html">Blogg</a>
+
+    <div class="mobile-dropdown">
+      <span class="mobile-title">Tjenester</span>
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="tekstveiledning.html">Tekstveiledning</a>
+      <a href="boker.html">Bøker</a>
+      <a href="podcast.html">Podcaster</a>
+      <a href="blogg.html">Blogg</a>
+    </div>
+
+    <div class="mobile-dropdown">
+      <span class="mobile-title">Arrangementer</span>
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="foredrag.html">Foredrag</a>
+      <a href="konferanser.html">Konferanser</a>
+    </div>
+
     <a href="om-oss.html">Om oss</a>
     <a href="kontakt.html">Kontakt</a>
-    <a href="logginn.html">Logg inn</a>
+    <a href="medlem.html">Medlem</a>
   </div>
 
 </header>
+
 
 <!-- ★ HERO-BOKS MED TITTEL + INTRO -->
 <main class="content-area">

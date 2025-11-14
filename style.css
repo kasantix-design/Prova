@@ -1,65 +1,102 @@
-/* --- GENERELT --- */
+/* -------------------------------------
+   GENERELT
+-------------------------------------- */
 
 body {
   margin: 0;
-  font-family: 'Lora', serif;
   background: #fffef6;
+  font-family: "Lora", serif;
   color: #1a1a1a;
+  line-height: 1.7;
+}
+
+.content-area {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem 6rem;
 }
 
 .content-box {
-  max-width: 900px;
-  margin: auto;
-  padding: 3rem 1.5rem;
+  background: #f8f4e9;
+  padding: 3rem 2rem;
+  border-radius: 14px;
+  margin: 3rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .9s;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-.fade-in.visible {
+.content-box.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* --- KNAPPER --- */
+/* -------------------------------------
+   KNAPPER
+-------------------------------------- */
 
 .btn {
-  background: #3d5c3d;
-  color: white;
+  background: #A8C3A0;
   border: none;
-  padding: .8rem 1.6rem;
-  font-size: 1rem;
-  border-radius: 6px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-weight: 700;
   cursor: pointer;
   transition: .25s ease;
-}
-.btn:hover {
-  background: #2f4a2f;
+  text-decoration: none;
 }
 
-/* --- NAV BAR --- */
+.btn:hover {
+  background: #9ab893;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------
+   NAV BAR
+-------------------------------------- */
 
 .nav-header {
   background: #ffffff;
-  padding: .5rem 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-img {
-  height: 55px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.7rem 1.5rem;
 }
 
 .nav-row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.left-nav {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.logo-img {
+  height: 65px;
+}
+
+/* Knappestil */
+.nav-btn {
+  background: #fffef6;
+  border: 2px solid rgba(0,0,0,0.15);
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.nav-btn:hover {
+  background: #ffffff80;
+  transform: translateY(-2px);
 }
 
 .nav-links {
@@ -67,102 +104,99 @@ body {
   gap: .5rem;
 }
 
-.nav-btn {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  padding: .5rem .8rem;
-  cursor: pointer;
-}
-
-.nav-btn:hover {
-  color: #3d5c3d;
-}
-
-/* --- DROPDOWN --- */
+/* -------------------------------------
+   DROPDOWN
+-------------------------------------- */
 
 .dropdown {
   position: relative;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
   background: white;
   border: 1px solid #ddd;
   min-width: 180px;
-  top: 35px;
-  padding: .5rem;
-  z-index: 50;
+  top: 38px;
+  padding: 0.5rem;
+  z-index: 100;
 }
+
 .dropdown.show .dropdown-content {
   display: block;
 }
+
 .dropdown-content a {
   display: block;
-  padding: .4rem;
+  padding: 0.45rem 0.5rem;
+  text-decoration: none;
   color: #1a1a1a;
 }
+
 .dropdown-content a:hover {
   background: #f3f3f3;
 }
 
-/* --- MOBILMENY --- */
+/* -------------------------------------
+   HAMBURGER + MOBILMENY
+-------------------------------------- */
 
 .nav-toggle {
   display: none;
-  font-size: 2rem;
   background: none;
   border: none;
-  margin-left: auto;
+  font-size: 2rem;
 }
 
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: #fff;
-  border-top: 1px solid #eee;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
+
+.mobile-menu a {
+  background: #fffef6;
+  border: 1px solid #dedede;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
 .mobile-menu.active {
   display: flex;
 }
 
-.mobile-menu a {
-  padding: .6rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* --- HERO --- */
+/* -------------------------------------
+   HERO
+-------------------------------------- */
 
 .hero-flex {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-image {
-  max-width: 260px;
-  border-radius: 10px;
-}
-
-.hero-text {
-  max-width: 400px;
-  text-align: center;
+  width: 280px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .brand-name {
-  font-size: 2.5rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin: 0.5rem 0;
 }
 
-/* --- GLITTER (lav frekvens) --- */
-
+/* Glitter slow */
 .glitter-slow {
-  position: relative;
   animation: glitter 5.8s infinite ease-in-out alternate;
-  background-clip: text;
 }
 
 @keyframes glitter {
@@ -171,27 +205,36 @@ body {
   100% { text-shadow: 0 0 2px rgba(255,255,255,0.25); }
 }
 
-/* --- SPLIT SECTION --- */
+/* -------------------------------------
+   SPLIT SECTION
+-------------------------------------- */
 
 .split-section {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .split-image img {
-  max-width: 350px;
-  border-radius: 10px;
+  width: 330px;
+  border-radius: 12px;
 }
 
 .split-text {
   max-width: 450px;
 }
 
-/* --- RESPONSIV --- */
+/* -------------------------------------
+   RESPONSIV
+-------------------------------------- */
 
 @media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+    margin-left: 1rem;
+  }
 }

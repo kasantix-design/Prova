@@ -56,8 +56,6 @@ body {
 /* -------------------------------------
    KNAPPER
 -------------------------------------- */
-
-/* Salviegrønne knapper */
 .btn {
   background: var(--accent);
   color: var(--text);
@@ -74,7 +72,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* NAV-knapper (linfarget) */
 .nav-btn {
   background: var(--background);
   border: 2px solid rgba(0,0,0,0.12);
@@ -119,7 +116,7 @@ body {
   height: 40px;
 }
 
-/* Høyre side av navbar */
+/* Right nav links */
 .nav-links {
   display: flex;
   gap: 0.6rem;
@@ -193,7 +190,7 @@ body {
 }
 
 /* -------------------------------------
-   HERO-SEKSJON
+   HERO
 -------------------------------------- */
 .hero-flex {
   display: flex;
@@ -253,9 +250,8 @@ body {
 }
 
 /* -------------------------------------
-   BOKGRID (NY) – 4 bøker horisontalt
+   BOKGRID – 4 kolonner
 -------------------------------------- */
-
 .book-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -286,13 +282,12 @@ body {
   margin-top: 0.5rem;
 }
 
-/* RESPONSIV BOKGRID */
+/* BOKGRID RESPONSIV */
 @media (max-width: 1000px) {
   .book-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 600px) {
   .book-grid {
     grid-template-columns: 1fr;
@@ -300,34 +295,8 @@ body {
 }
 
 /* -------------------------------------
-   FOOTER
+   GRØNN FORM-BOKS
 -------------------------------------- */
-footer {
-  background: var(--background);
-  text-align: center;
-  padding: 3rem 0 2rem;
-  opacity: 0.8;
-}
-
-/* -------------------------------------
-   RESPONSIV GENERELT
--------------------------------------- */
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .hero-flex {
-    flex-direction: column;
-  }
-  .hero-image,
-  .hero-text {
-    width: 100%;
-  }
-}
-/* GRØNN FORM-BOKS */
 .form-green-box {
   background: var(--accent);
   padding: 2rem;
@@ -358,7 +327,6 @@ footer {
   resize: vertical;
 }
 
-/* Grønn knapp, sterkere variant */
 .form-btn-green {
   background: #8FB98A !important;
   color: #2E2E2E;
@@ -376,3 +344,46 @@ footer {
   transform: translateY(-2px);
 }
 
+/* -------------------------------------
+   FOOTER
+-------------------------------------- */
+footer {
+  background: var(--background);
+  text-align: center;
+  padding: 3rem 0 2rem;
+  opacity: 0.8;
+}
+
+/* -------------------------------------
+   RESPONSIV NAV / HERO
+-------------------------------------- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .hero-flex {
+    flex-direction: column;
+  }
+  .hero-image,
+  .hero-text {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------
+   FIX: KARUSELL TILBAKEMELDINGER
+-------------------------------------- */
+.carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  flex-shrink: 0;
+}

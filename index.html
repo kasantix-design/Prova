@@ -1,18 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>La Masken Falle – Mai Camilla Munkejord</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
 <!-- HEADER -->
 <header class="nav-header">
 
-  <!-- Logo-linje -->
   <div class="nav-container">
     <a href="index.html" class="logo">
-      <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
+      <img src="images/logo.webp" class="logo-img" alt="La Masken Falle logo">
     </a>
   </div>
 
-  <!-- Navigasjonslinje -->
   <div class="nav-row">
     <nav class="nav-links" id="navMenu">
 
-      <!-- DROPDOWN 1 — TJENESTER -->
+      <!-- Tjenester -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -24,48 +37,156 @@
         </div>
       </div>
 
-      <!-- DROPDOWN 2 — ARRANGEMENTER -->
+      <!-- Arrangementer -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
-          <a href="skrivekurs.html">Skrivekurs</a>
-          <a href="foredrag.html">Foredrag</a>
-          <a href="konferanser.html">Konferanser</a>
+          <a href="#">Skrivekurs</a>
+          <a href="#">Foredrag</a>
+          <a href="#">Konferanser</a>
         </div>
       </div>
 
-      <!-- ENKLE KNAPPER -->
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+      <button class="nav-btn" onclick="location.href='logginn.html'">Medlem</button>
 
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
-  <!-- Mobilmeny -->
+  <!-- Mobil -->
   <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Hjem</a>
 
-    <div class="mobile-dropdown">
-      <span class="mobile-title">Tjenester</span>
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="tekstveiledning.html">Tekstveiledning</a>
-      <a href="boker.html">Bøker</a>
-      <a href="podcast.html">Podcaster</a>
-      <a href="blogg.html">Blogg</a>
-    </div>
+    <p class="mobile-menu-title">Tjenester</p>
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
 
-    <div class="mobile-dropdown">
-      <span class="mobile-title">Arrangementer</span>
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="foredrag.html">Foredrag</a>
-      <a href="konferanser.html">Konferanser</a>
-    </div>
+    <p class="mobile-menu-title">Arrangementer</p>
+    <a href="#">Skrivekurs</a>
+    <a href="#">Foredrag</a>
+    <a href="#">Konferanser</a>
 
     <a href="om-oss.html">Om oss</a>
     <a href="kontakt.html">Kontakt</a>
-    <a href="medlem.html">Medlem</a>
+    <a href="logginn.html">Medlem</a>
   </div>
 
 </header>
+
+
+<!-- HERO -->
+<section class="content-box hero-flex fade-in">
+
+  <div class="hero-image-container">
+    <img src="images/mai2.webp" alt="Mai Camilla Munkejord" class="hero-image">
+  </div>
+
+  <div class="hero-text glitter-slow">
+    <h2 class="hero-name">Mai Camilla Munkejord</h2>
+    <p class="hero-title">forfatter · podcaster · kursholder</p>
+    <h1 class="brand-name">LA MASKEN FALLE</h1>
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="content-box fade-in">
+  <h3>Bestill gratis samtale</h3>
+  <p>Utforsk dine mønstre, spørsmål og ønsker – i en trygg og gratis samtale.</p>
+  <button class="btn">Bestill gratis samtale</button>
+</section>
+
+
+<!-- OM OSS -->
+<section class="content-box fade-in">
+  <h3>Om La Masken Falle</h3>
+  <p>
+    La Masken Falle er et sted for indre arbeid, selvutforskning og ekte samtaler.
+    Gjennom kurs, podcast og bøker inviterer Mai Camilla deg til å leve mer sant
+    og helhjertet.
+  </p>
+</section>
+
+
+<!-- PODCAST -->
+<section class="content-box fade-in">
+  <h3>Podcast</h3>
+  <p>En ærlig podkast om traumer, nære relasjoner, oppvåkning og indre heling.</p>
+  <button class="btn" onclick="location.href='podcast.html'">Lytt til podcast</button>
+</section>
+
+
+<!-- BØKER -->
+<section class="content-box fade-in">
+  <h3>Bøker</h3>
+  <p>
+    Bøkene til Mai Camilla er skrevet for deg som ønsker å vokse, heles og våge å være deg selv.
+  </p>
+  <button class="btn" onclick="location.href='boker.html'">Utforsk bøkene</button>
+</section>
+
+
+<!-- SPLIT SEK JSON -->
+<section class="content-box split-section fade-in">
+
+  <div class="split-image">
+    <img src="images/ommeg.jpg" alt="Mai Camilla Munkejord">
+  </div>
+
+  <div class="split-text">
+    <h2>Hei, jeg er Mai Camilla Munkejord</h2>
+
+    <p>
+      Det å skrive er for meg forløsende, frigjørende, helsefremmende og sannhetsskapende.
+      Mine bøker, podcaster og kurs inviterer deg til å finne din stemme og våge å uttrykke den.
+    </p>
+
+    <p>
+      Din historie har kraften til å transformere liv, bryte mønstre og endre systemer.
+      Autentisitetens tid er nå.
+    </p>
+
+    <button class="btn" onclick="location.href='nyhetsbrev.html'">Meld deg på mitt nyhetsbrev</button>
+  </div>
+
+</section>
+
+
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+
+<!-- SCRIPT -->
+<script>
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
+
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+</script>
+
+</body>
+</html>

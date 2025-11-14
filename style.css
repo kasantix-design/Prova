@@ -1,21 +1,22 @@
-/* ================================
-   FARGEPALETT
-================================ */
+/* -------------------------------------
+   FARGER
+-------------------------------------- */
+
 :root {
-  --bg: #F5F2E8;        /* Lin / sandfarget bakgrunn */
-  --box: #F8E4D3;       /* Lys aprikos for innholdsbokser */
+  --background: #F5F2E8;   /* lin / sand */
+  --box: #F8E4D3;          /* lys aprikos */
   --text: #2E2E2E;
-  --accent: #A8C3A0;    /* Salviegrønn */
-  --accent-dark: #8FAE8A;
+  --accent: #A8C3A0;       /* salviegrønn */
   --shadow: rgba(0, 0, 0, 0.06);
 }
 
-/* ================================
-   GLOBALT
-================================ */
+/* -------------------------------------
+   GENERELT
+-------------------------------------- */
+
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--background);
   font-family: "Lora", serif;
   color: var(--text);
   line-height: 1.7;
@@ -30,12 +31,12 @@ body {
 .content-box {
   background: var(--box);
   padding: 3rem 2rem;
-  border-radius: 14px;
-  margin: 3rem 0;
+  border-radius: 16px;
+  margin: 4rem 0;
   box-shadow: 0 10px 30px var(--shadow);
   opacity: 0;
-  transform: translateY(35px);
-  transition: .9s ease;
+  transform: translateY(40px);
+  transition: .9s;
 }
 
 .content-box.visible {
@@ -43,102 +44,90 @@ body {
   transform: translateY(0);
 }
 
-/* ================================
+/* -------------------------------------
    KNAPPER
-================================ */
-.btn, .book-btn {
+-------------------------------------- */
+
+.btn {
   background: var(--accent);
+  color: var(--text);
   border: none;
   padding: 0.9rem 1.8rem;
   border-radius: 10px;
-  color: var(--text);
   font-weight: 700;
   cursor: pointer;
   transition: .25s ease;
   text-decoration: none;
-  display: inline-block;
 }
 
-.btn:hover, .book-btn:hover {
-  background: var(--accent-dark);
+.btn:hover {
+  background: #9AB893;
   transform: translateY(-2px);
 }
 
-/* ================================
-   HEADER / NAV BAR
-================================ */
+/* NAVBAR-knapper (LIN) */
+.nav-btn {
+  background: var(--background);
+  border: 2px solid rgba(0,0,0,0.12);
+  padding: 0.45rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.nav-btn:hover {
+  background: #ffffff80;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------
+   NAV BAR
+-------------------------------------- */
+
 .nav-header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--shadow);
+  background: var(--background);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0.8rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 0.8rem 1.5rem;
+  z-index: 50;
 }
 
 .nav-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: .5rem;
 }
 
-/* venstre del av navbar med dropdowns */
 .left-nav {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.6rem;
   align-items: center;
 }
 
-/* Logo */
 .logo-img {
-  height: 60px;
+  height: 70px;
 }
 
-/* Nav-knapper */
-.nav-btn {
-  background: var(--box);
-  border: 2px solid rgba(0,0,0,0.15);
-  padding: 0.45rem 0.9rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.nav-btn:hover {
-  background: #fdf0e8;
-  transform: translateY(-2px);
-}
-
-.nav-links {
-  display: flex;
-  gap: .6rem;
-}
-
-/* ================================
+/* -------------------------------------
    DROPDOWN
-================================ */
+-------------------------------------- */
+
 .dropdown {
   position: relative;
-}
-
-.dropdown-btn::after {
-  margin-left: 4px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 42px;
-  left: 0;
-  background: var(--box);
-  border-radius: 10px;
-  border: 1px solid var(--shadow);
+  background: var(--background);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
   min-width: 180px;
+  top: 42px;
   padding: 0.5rem;
-  box-shadow: 0 6px 20px var(--shadow);
   z-index: 200;
 }
 
@@ -148,138 +137,125 @@ body {
 
 .dropdown-content a {
   display: block;
-  padding: 0.55rem 0.6rem;
-  border-radius: 6px;
-  color: var(--text);
+  padding: 0.5rem 0.6rem;
   text-decoration: none;
+  color: var(--text);
+  border-radius: 8px;
 }
 
 .dropdown-content a:hover {
-  background: rgba(255,255,255,0.4);
+  background: #ffffff80;
 }
 
-/* ================================
-   HAMBURGER / MOBIL
-================================ */
+/* -------------------------------------
+   HAMBURGER + MOBILMENY
+-------------------------------------- */
+
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: var(--box);
-  padding: 1.2rem;
-  border-radius: 10px;
-  margin-top: .5rem;
-}
-
-.mobile-menu a {
-  background: var(--bg);
-  border: 1px solid var(--shadow);
-  padding: 0.8rem;
-  margin-bottom: 0.8rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
+  padding: 1rem 2rem;
 }
 
 .mobile-menu.active {
   display: flex;
 }
 
-/* ================================
-   HERO + GLITTER
-================================ */
+.mobile-menu a {
+  background: var(--background);
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* -------------------------------------
+   HERO
+-------------------------------------- */
+
 .hero-flex {
   display: flex;
-  align-items: center;
   gap: 2.5rem;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 
 .hero-image {
-  width: 280px;
+  width: 40%;
+  min-width: 260px;
   border-radius: 14px;
-  box-shadow: 0 10px 30px var(--shadow);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.hero-text {
+  width: 50%;
+  min-width: 300px;
 }
 
 .brand-name {
-  font-family: "Playfair Display", serif;
   font-size: 3rem;
-  margin: 0.5rem 0;
+  font-family: "Playfair Display", serif;
+  margin: 0.7rem 0;
 }
 
+/* Glitter */
 .glitter-slow {
   animation: glitter 5.8s infinite ease-in-out alternate;
 }
 
 @keyframes glitter {
-  0% { text-shadow: 0 0 1px rgba(255,255,255,0.2); }
-  50% { text-shadow: 0 0 10px rgba(255,255,255,0.55); }
-  100% { text-shadow: 0 0 1px rgba(255,255,255,0.2); }
+  0% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
+  50% { text-shadow: 0 0 7px rgba(255,255,255,.45); }
+  100% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
 }
 
-/* ================================
+/* -------------------------------------
    SPLIT SECTION
-================================ */
+-------------------------------------- */
+
 .split-section {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .split-image img {
   width: 330px;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .split-text {
-  max-width: 480px;
+  max-width: 450px;
 }
 
-/* ================================
-   BOOK GRID
-================================ */
-.book-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.book-item {
-  width: calc(25% - 1.5rem);
-  text-align: center;
-}
-
-.book-item img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px var(--shadow);
-  margin-bottom: 1rem;
-}
-
-/* ================================
+/* -------------------------------------
    FOOTER
-================================ */
+-------------------------------------- */
+
 footer {
-  background: var(--bg);
-  padding: 2rem;
+  background: var(--background);
   text-align: center;
-  font-size: 0.95rem;
-  margin-top: 6rem;
+  padding: 3rem 0 2rem;
+  opacity: 0.8;
 }
 
-/* ================================
+/* -------------------------------------
    RESPONSIV
-================================ */
+-------------------------------------- */
+
 @media (max-width: 900px) {
   .nav-links {
     display: none;
@@ -288,13 +264,12 @@ footer {
     display: block;
   }
 
-  .book-item {
-    width: calc(50% - 1rem);
+  .hero-flex {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 600px) {
-  .book-item {
+  .hero-text,
+  .hero-image {
     width: 100%;
   }
 }

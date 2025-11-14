@@ -3,10 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tekstveiledning – La Masken Falle</title>
+  <title>Om oss – La Masken Falle</title>
 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* APRIKOS PRIKKETE BAKGRUNN */
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(var(--box) 1px, transparent 1px),
+        radial-gradient(var(--box) 1px, transparent 1px);
+      background-position: 0 0, 25px 25px;
+      background-size: 50px 50px;
+    }
+
+    /* HERO LAYOUT */
+    .hero-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: var(--box);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .hero-about img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px var(--shadow);
+    }
+
+    @media (max-width: 800px) {
+      .hero-about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-about img {
+        max-width: 80%;
+        margin: auto;
+      }
+    }
+
+    /* KARUSELL – SAMME SOM TILBAKEMELDINGER */
+    .carousel-wrapper {
+      margin: 4rem auto;
+      max-width: 900px;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      padding: 3rem;
+      background: var(--box);
+      text-align: center;
+      border-radius: 16px;
+      transition: 0.5s ease;
+      box-shadow: 0 12px 30px var(--shadow);
+    }
+
+    .carousel-item img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--accent);
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: var(--text);
+      box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    }
+
+    .carousel-btn:hover {
+      background: #9AB893;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-btn.prev { left: -1rem; }
+    .carousel-btn.next { right: -1rem; }
+
+    @media (max-width: 600px) {
+      .carousel-btn { display: none; }
+      .carousel-item { padding: 2rem; }
+    }
+  </style>
 </head>
 
 <body>
@@ -16,12 +116,13 @@
   <div class="nav-row">
 
     <div class="left-nav">
-      <a href="index.html">
+      <a href="index.html" class="logo">
         <img src="images/logo.webp" class="logo-img">
       </a>
     </div>
 
     <nav class="nav-links" id="navMenu">
+
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -42,16 +143,16 @@
         </div>
       </div>
 
-      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn active">Om oss</button>
       <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
       <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
-  <!-- Mobil -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="skrivekurs.html">Skrivekurs</a>
     <a href="tekstveiledning.html">Tekstveiledning</a>
@@ -59,50 +160,129 @@
     <a href="podcast.html">Podcaster</a>
     <a href="blogg.html">Blogg</a>
     <a href="om-oss.html">Om oss</a>
+    <a href="tilbakemeldinger.html">Tilbakemeldinger</a>
     <a href="kontakt.html">Kontakt</a>
     <a href="medlem.html">Medlem</a>
   </div>
 </header>
 
-<!-- HERO -->
-<main class="content-area">
-<section class="content-box fade-in hero-flex">
-  <img src="images/mai2.webp" class="hero-image">
 
-  <div class="hero-text">
-    <h2 class="hero-name">Mai Camilla Munkejord</h2>
-    <p class="hero-title">forfatter · podcaster · tekstveileder</p>
-    <h1 class="brand-name glitter-slow">Tekstveiledning</h1>
-    <p>Få veiledning som løfter teksten din – både språklig, strukturelt og emosjonelt.</p>
+<!-- HERO ABOUT -->
+<section class="content-box fade-in">
+  <div class="hero-about">
+
+    <div>
+      <h1 class="brand-name glitter-slow">Om Mai Camilla Munkejord</h1>
+
+      <p>Jeg heter Mai Camilla Munkejord, og jeg er opptatt av å bidra til å oppdage og forløse utdaterte kulturelle programmeringer og trossystemer.</p>
+
+      <p>Som barn stilte jeg ofte spørsmål ved alt som ”bare var sånn”. Jeg elsket å lese, lære, systematisere og skrive – og før jeg visste ordet av det, hadde jeg blitt professor i samfunnsvitenskap.</p>
+
+      <p>I 2020 stoppet alt opp: insomnia, depresjon og utbrenthet. Sykemeldingen ble starten på en dypt transformerende reise. Gjennom psykodrama, hypnoterapi, regression, IoPT, kinesiologi, healing og intuitive prosesser fant jeg veien hjem til meg selv.</p>
+
+      <p>Intuitiv skriving er nå et av mine viktigste verktøy. Det hjelper oss å skrive fra den delen av oss som husker det hodet har glemt.</p>
+
+      <p>Jeg har skrevet fire bøker, tilbyr tekstveiledning og skrivekurs, og driver to podcaster: <em>La Masken Falle</em> og <em>BokPrat med Mai Camilla Munkejord</em>.</p>
+
+      <p><strong>Er du klar for å skrive deg fri?</strong></p>
+    </div>
+
+    <img src="images/ommeg.jpg" alt="Mai Camilla Munkejord">
+
   </div>
 </section>
 
-<!-- Innhold -->
-<section class="content-box fade-in">
-  <h2>Hva innebærer tekstveiledning?</h2>
-  <p>
-    Jeg tilbyr personlig og grundig tekstveiledning for deg som skriver bok, innlegg, akademisk tekst 
-    eller personlige refleksjoner. Sammen finner vi klarhet, struktur og dybde i det du ønsker å uttrykke.
-  </p>
 
-  <ul>
-    <li>Tilbakemeldinger på språk, flyt og stemme</li>
-    <li>Struktur, dramaturgi og utvikling av teksten</li>
-    <li>Skriveblokkering og indre kritiker</li>
-    <li>Reflekterende spørsmål for å finne stemmen din</li>
-  </ul>
-
-  <button class="btn" onclick="location.href='kontakt.html'">Forespør veiledning</button>
+<!-- SAMARBEIDSPARTNERE -->
+<section class="content-box fade-in" style="text-align:center;">
+  <h2 class="brand-name">Samarbeidspartnere</h2>
 </section>
-</main>
 
-<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
+<div class="carousel-wrapper fade-in">
+  <button class="carousel-btn prev">❮</button>
+  <button class="carousel-btn next">❯</button>
 
+  <div class="carousel" id="carousel">
+
+    <!-- Erika -->
+    <div class="carousel-item">
+      <img src="images/erika.jpg" alt="Erika Ribu">
+      <h2>Erika Ribu</h2>
+      <h4>Skriveveileder · Reader · Healer</h4>
+      <p>“Mitt mål er å hjelpe mennesker til å finne sin sannhet. Jeg gjør dette via readinger, healing, skrivekurs og veiledning.”</p>
+      <a href="https://erikaribu.no" class="btn">Nettside</a>
+    </div>
+
+    <!-- Kari Mette -->
+    <div class="carousel-item">
+      <img src="images/karimette.jpg" alt="Kari Mette B. Tilley">
+      <h2>Kari Mette Brunvatne Tilley</h2>
+      <h4>Kunstner · Illustratør · Klarsynt healer</h4>
+      <p>Kunstneren bak illustrasjonene i Traumekvartetten og bildene som preger La Masken Falle.</p>
+      <a href="https://karimette.com" class="btn">Nettside</a>
+    </div>
+
+    <!-- Santa -->
+    <div class="carousel-item">
+      <img src="images/santa.jpg" alt="Santa Samara">
+      <h2>Santa Samara</h2>
+      <h4>Voice of the Roots</h4>
+      <p>Santa arbeider med stemmen som helbredende verktøy og leder mennesker inn i kraftfulle autentiske stemmeprosesser.</p>
+      <a href="https://voiceoftheroots.com" class="btn">Nettside</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+
+
+<!-- SCRIPT -->
 <script>
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+  /* Fade */
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
+
+  /* Hamburger */
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  /* Dropdowns */
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+
+  /* Carousel */
+  const carousel = document.getElementById("carousel");
+  const items = document.querySelectorAll(".carousel-item");
+  let index = 0;
+
+  document.querySelector(".next").addEventListener("click", () => {
+    index = (index + 1) % items.length;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.querySelector(".prev").addEventListener("click", () => {
+    index = (index - 1 + items.length) % items.length;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
 </script>
+
 
 </body>
 </html>

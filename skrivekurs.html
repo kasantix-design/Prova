@@ -1,1 +1,112 @@
-<html><body>skrivekurs</body></html>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skrivekurs – La Masken Falle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="nav-header">
+  <div class="nav-row">
+
+    <div class="left-nav">
+      <a href="index.html"><img src="images/logo.webp" class="logo-img"></a>
+    </div>
+
+    <nav class="nav-links" id="navMenu">
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+          <a href="blogg.html">Blogg</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+        <div class="dropdown-content">
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
+        </div>
+      </div>
+
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="medlem.html">Medlem</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="content-box fade-in" style="text-align:center;">
+  <h1 class="brand-name glitter-slow">Skrivekurs</h1>
+  <p>Fordypning, inspirasjon og mot til å skrive din egen historie.</p>
+</section>
+
+<main class="content-area fade-in">
+
+<section class="content-box">
+  <h3>Hva du får</h3>
+  <p>Et skrivekurs som kombinerer emosjonell dybde, teknikk og personlig vekst.</p>
+
+  <ul>
+    <li>Trygge øvelser for å åpne kreativitet</li>
+    <li>Teknikker for å skrive fra hjertet</li>
+    <li>Guidet refleksjon og indre arbeid</li>
+    <li>Personlig tilbakemelding</li>
+    <li>Tilgang til opptak (hvis digitalt)</li>
+  </ul>
+
+  <button class="btn">Meld deg på</button>
+</section>
+
+</main>
+
+<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
+
+<!-- SCRIPT -->
+<script>
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.12});
+  boxes.forEach(b=>obs.observe(b));
+
+  document.getElementById('navToggle').onclick = ()=> {
+    document.getElementById('mobileMenu').classList.toggle('active');
+  };
+
+  document.querySelectorAll('.dropdown-btn').forEach(btn=>{
+    btn.onclick = function(e){
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    };
+  });
+
+  document.onclick = ()=> {
+    document.querySelectorAll('.dropdown').forEach(d=>d.classList.remove('show'));
+  };
+</script>
+
+</body>
+</htm

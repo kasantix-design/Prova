@@ -14,43 +14,42 @@
 <header class="nav-header">
   <div class="nav-row">
 
-    <!-- VENSTRE SIDE: LOGO + DROPDOWNS -->
-    <div class="left-nav">
+   <div class="left-nav">
+  <a href="index.html" class="logo">
+    <img src="images/logo.webp" class="logo-img">
+  </a>
+</div>
 
-      <a href="index.html" class="logo">
-        <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
-      </a>
+<nav class="nav-links" id="navMenu">
 
-      <!-- DROP 1 -->
-      <div class="dropdown">
-        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
-        <div class="dropdown-content">
-          <a href="skrivekurs.html">Skrivekurs</a>
-          <a href="tekstveiledning.html">Tekstveiledning</a>
-          <a href="boker.html">Bøker</a>
-          <a href="podcast.html">Podcaster</a>
-          <a href="blogg.html">Blogg</a>
-        </div>
-      </div>
-
-      <!-- DROP 2 -->
-      <div class="dropdown">
-        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
-        <div class="dropdown-content">
-          <a href="skrivekurs.html">Skrivekurs</a>
-          <a href="foredrag.html">Foredrag</a>
-          <a href="konferanser.html">Konferanser</a>
-        </div>
-      </div>
-
+  <!-- Dropdown 1 -->
+  <div class="dropdown">
+    <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+    <div class="dropdown-content">
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="tekstveiledning.html">Tekstveiledning</a>
+      <a href="boker.html">Bøker</a>
+      <a href="podcast.html">Podcaster</a>
+      <a href="blogg.html">Blogg</a>
     </div>
+  </div>
 
-    <!-- HØYRE SIDE: KNAPPER -->
-    <nav class="nav-links" id="navMenu">
-      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
-      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
-    </nav>
+  <!-- Dropdown 2 -->
+  <div class="dropdown">
+    <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+    <div class="dropdown-content">
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="foredrag.html">Foredrag</a>
+      <a href="konferanser.html">Konferanser</a>
+    </div>
+  </div>
+
+  <!-- Enkle knapper -->
+  <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+  <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+  <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+
+</nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>

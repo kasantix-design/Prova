@@ -94,7 +94,6 @@ body {
 /* -------------------------------------
    NAVBAR
 -------------------------------------- */
-
 .nav-header {
   background: var(--background);
   border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -164,7 +163,6 @@ body {
 /* -------------------------------------
    MOBILMENY
 -------------------------------------- */
-
 .nav-toggle {
   display: none;
   background: none;
@@ -193,18 +191,10 @@ body {
   text-decoration: none;
   color: var(--text);
 }
-@media (max-width: 900px) {
-  .book-row {
-    flex-wrap: wrap; /* gjør dem responsive */
-    justify-content: center;
-  }
-}
-
 
 /* -------------------------------------
    HERO-SEKSJON
 -------------------------------------- */
-
 .hero-flex {
   display: flex;
   gap: 2.5rem;
@@ -246,7 +236,6 @@ body {
 /* -------------------------------------
    SPLIT SECTION
 -------------------------------------- */
-
 .split-section {
   display: flex;
   gap: 2.5rem;
@@ -264,78 +253,50 @@ body {
 }
 
 /* -------------------------------------
-   BOKER & PODCAST LAYOUT
+   BOKGRID (NY) – 4 bøker horisontalt
 -------------------------------------- */
 
-.book-row {
-  display: flex;
-  flex-wrap: wrap;
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  justify-content: center;
+  margin-top: 3rem;
 }
 
 .book-item {
-  width: 22%;
-  min-width: 220px;
+  background: var(--box);
+  padding: 1.5rem;
+  border-radius: 14px;
   text-align: center;
+  box-shadow: 0 10px 25px var(--shadow);
 }
 
 .book-item img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px var(--shadow);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.book-item h3 {
   margin-bottom: 0.7rem;
+  font-size: 1.2rem;
 }
 
-.book-btn {
-  display: inline-block;
-  margin-top: 0.6rem;
-  background: var(--accent);
-  color: var(--text);
-  padding: 0.6rem 1.4rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.book-btn:hover {
-  background: #9AB893;
-  transform: translateY(-2px);
+.book-item .btn {
+  margin-top: 0.5rem;
 }
 
-.book-row {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: nowrap; /* Holder ALT på én linje */
+/* RESPONSIV BOKGRID */
+@media (max-width: 1000px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.book-item {
-  text-align: center;
-  max-width: 220px;
-}
-
-.book-item img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  object-fit: cover;
-}
-
-.book-btn {
-  background: var(--accent);
-  color: var(--text);
-  padding: 0.7rem 1.4rem;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.25s ease;
-}
-
-.book-btn:hover {
-  background: #9AB893;
-  transform: translateY(-2px);
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* -------------------------------------
@@ -349,7 +310,7 @@ footer {
 }
 
 /* -------------------------------------
-   RESPONSIV
+   RESPONSIV GENERELT
 -------------------------------------- */
 @media (max-width: 900px) {
   .nav-links {
@@ -358,7 +319,6 @@ footer {
   .nav-toggle {
     display: block;
   }
-
   .hero-flex {
     flex-direction: column;
   }
@@ -366,38 +326,4 @@ footer {
   .hero-text {
     width: 100%;
   }
-
-  .book-item {
-    width: 45%;
-  }
 }
-
-@media (max-width: 600px) {
-  .book-item {
-    width: 90%;
-  }
-}
-/*.........Ny...
-/* Rad 1: logo alene */
-.header-logo-row {
-  text-align: left;
-  padding-bottom: 0.4rem;
-}
-
-/* Rad 2: tittel og knapper på samme linje */
-.header-title-nav-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Tittel */
-.header-title {
-  font-size: 1.6rem;
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  margin: 0;
-  color: var(--text);
-}
-

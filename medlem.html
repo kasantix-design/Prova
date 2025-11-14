@@ -11,15 +11,19 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 <header class="nav-header">
   <div class="nav-row">
 
     <div class="left-nav">
-      <a href="index.html"><img src="images/logo.webp" class="logo-img"></a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img">
+      </a>
     </div>
 
     <nav class="nav-links" id="navMenu">
+
+      <!-- Dropdown 1 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -31,6 +35,7 @@
         </div>
       </div>
 
+      <!-- Dropdown 2 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -40,14 +45,17 @@
         </div>
       </div>
 
+      <!-- Enkle knapper -->
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+      <button class="nav-btn active">Medlem</button>
+
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="skrivekurs.html">Skrivekurs</a>
     <a href="tekstveiledning.html">Tekstveiledning</a>
@@ -60,39 +68,91 @@
   </div>
 </header>
 
+
+
+
 <!-- HERO -->
-<main class="content-area">
-<section class="content-box fade-in hero-flex">
-  <img src="images/mai2.webp" class="hero-image">
-
-  <div class="hero-text">
-    <h1 class="brand-name glitter-slow">Medlemskap</h1>
-    <p>Bli en del av et varmt og trygt fellesskap med fokus på vekst og heling.</p>
-  </div>
+<section class="content-box fade-in" style="text-align:center;">
+  <h1 class="brand-name glitter-slow">Medlem</h1>
+  <p>Logg inn for å få tilgang til eksklusivt innhold.</p>
 </section>
 
-<!-- INFO -->
-<section class="content-box fade-in">
-  <h2>Hva får du som medlem?</h2>
 
-  <ul>
-    <li>Eksklusivt innhold og dypdykk</li>
-    <li>Rabatter på kurs, foredrag og veiledning</li>
-    <li>Personlige refleksjonsoppgaver hver måned</li>
-    <li>Tilgang til et fellesskap av likesinnede</li>
-  </ul>
+<!-- LOGIN BOX -->
+<section class="content-box fade-in" style="max-width:600px; margin:auto;">
 
-  <button class="btn">Bli medlem</button>
+  <h2 style="text-align:center;">Logg inn</h2>
+
+  <form id="loginForm" style="margin-top:2rem;">
+
+    <label for="email"><strong>E-post</strong></label>
+    <input type="email" id="email" name="email" required
+           style="width:100%; padding:0.9rem; margin-top:0.3rem; margin-bottom:1.2rem;
+                  border:1px solid #ccc; border-radius:10px;">
+
+    <label for="password"><strong>Passord</strong></label>
+    <input type="password" id="password" name="password" required
+           style="width:100%; padding:0.9rem; margin-top:0.3rem; margin-bottom:1.5rem;
+                  border:1px solid #ccc; border-radius:10px;">
+
+    <!-- Grønne knapper – samme stil som dine -->
+    <button type="submit" class="btn" style="width:100%;">Logg inn</button>
+
+    <p style="text-align:center; margin-top:1rem;">
+      <a href="#" style="text-decoration:none; color:#444;">Glemt passord?</a>
+    </p>
+
+  </form>
+
+  <!-- Placeholder for melding -->
+  <p id="loginMessage" style="text-align:center; margin-top:1.5rem;"></p>
+
 </section>
-</main>
 
-<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
 
+
+
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+
+
+<!-- SCRIPTS -->
 <script>
-const navToggle4 = document.getElementById('navToggle');
-const mobileMenu4 = document.getElementById('mobileMenu');
-navToggle4.addEventListener('click', () => mobileMenu4.classList.toggle('active'));
+  // Fade
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
+
+  // Hamburger
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  // Dropdowns
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+
+
+  /* Fake login (kan byttes ut med ekte backend senere) */
+  document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    document.getElementById("loginMessage").innerText =
+      "✨ Innlogging kommer snart! (Backend kobles på senere.)";
+  });
 </script>
+
 
 </body>
 </html>

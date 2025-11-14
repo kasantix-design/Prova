@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medlem – La Masken Falle</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="nav-header">
+  <div class="nav-row">
+
+    <div class="left-nav">
+      <a href="index.html"><img src="images/logo.webp" class="logo-img"></a>
+    </div>
+
+    <nav class="nav-links" id="navMenu">
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="tekstveiledning.html">Tekstveiledning</a>
+          <a href="boker.html">Bøker</a>
+          <a href="podcast.html">Podcaster</a>
+          <a href="blogg.html">Blogg</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
+        <div class="dropdown-content">
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
+        </div>
+      </div>
+
+      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
+      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="medlem.html">Medlem</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<main class="content-area">
+<section class="content-box fade-in hero-flex">
+  <img src="images/mai2.webp" class="hero-image">
+
+  <div class="hero-text">
+    <h1 class="brand-name glitter-slow">Medlemskap</h1>
+    <p>Bli en del av et varmt og trygt fellesskap med fokus på vekst og heling.</p>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="content-box fade-in">
+  <h2>Hva får du som medlem?</h2>
+
+  <ul>
+    <li>Eksklusivt innhold og dypdykk</li>
+    <li>Rabatter på kurs, foredrag og veiledning</li>
+    <li>Personlige refleksjonsoppgaver hver måned</li>
+    <li>Tilgang til et fellesskap av likesinnede</li>
+  </ul>
+
+  <button class="btn">Bli medlem</button>
+</section>
+</main>
+
+<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
+
+<script>
+const navToggle4 = document.getElementById('navToggle');
+const mobileMenu4 = document.getElementById('mobileMenu');
+navToggle4.addEventListener('click', () => mobileMenu4.classList.toggle('active'));
+</script>
+
+</body>
+</html>

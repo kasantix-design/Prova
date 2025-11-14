@@ -1,71 +1,31 @@
 /* -------------------------------------
-   FARGER
+   NAV BAR – ENDELIG RIKTIG
 -------------------------------------- */
 
-:root {
-  --background: #F5F2E8;   /* lin / sand */
-  --box: #F8E4D3;          /* lys aprikos */
-  --text: #2E2E2E;
-  --accent: #A8C3A0;       /* salviegrønn */
-  --shadow: rgba(0, 0, 0, 0.06);
-}
-
-/* -------------------------------------
-   GENERELT
--------------------------------------- */
-
-body {
-  margin: 0;
+.nav-header {
   background: var(--background);
-  font-family: "Lora", serif;
-  color: var(--text);
-  line-height: 1.7;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.content-area {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3rem 1.5rem 6rem;
+/* Hovedlinjen i nav */
+.nav-row {
+  display: flex;
+  justify-content: space-between; /* dropdowns til venstre, knapper til høyre */
+  align-items: center;
 }
 
-.content-box {
-  background: var(--box);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin: 4rem 0;
-  box-shadow: 0 10px 30px var(--shadow);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: .9s;
+/* Venstre side: logo + dropdowns */
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
-.content-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* -------------------------------------
-   KNAPPER
--------------------------------------- */
-
-.btn {
-  background: var(--accent);
-  color: var(--text);
-  border: none;
-  padding: 0.9rem 1.8rem;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: .25s ease;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #9AB893;
-  transform: translateY(-2px);
-}
-
-/* NAVBAR-knapper (LIN) */
+/* Navbar-knapper (kun linfarge) */
 .nav-btn {
   background: var(--background);
   border: 2px solid rgba(0,0,0,0.12);
@@ -82,39 +42,18 @@ body {
   transform: translateY(-2px);
 }
 
-/* -------------------------------------
-   NAV BAR
--------------------------------------- */
-
-.nav-header {
-  background: var(--background);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0.8rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.nav-row {
+/* Høyre side: vanlige knapper */
+.nav-links {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.left-nav {
-  display: flex;
   gap: 0.6rem;
-  align-items: center;
 }
 
 .logo-img {
   height: 40px;
 }
 
-/* -------------------------------------
-   DROPDOWN
--------------------------------------- */
-
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -147,10 +86,7 @@ body {
   background: #ffffff80;
 }
 
-/* -------------------------------------
-   HAMBURGER + MOBILMENY
--------------------------------------- */
-
+/* MOBILMENY */
 .nav-toggle {
   display: none;
   background: none;
@@ -179,83 +115,7 @@ body {
   color: var(--text);
 }
 
-/* -------------------------------------
-   HERO
--------------------------------------- */
-
-.hero-flex {
-  display: flex;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image {
-  width: 40%;
-  min-width: 260px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  object-fit: cover;
-}
-
-.hero-text {
-  width: 50%;
-  min-width: 300px;
-}
-
-.brand-name {
-  font-size: 3rem;
-  font-family: "Playfair Display", serif;
-  margin: 0.7rem 0;
-}
-
-/* Glitter */
-.glitter-slow {
-  animation: glitter 5.8s infinite ease-in-out alternate;
-}
-
-@keyframes glitter {
-  0% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
-  50% { text-shadow: 0 0 7px rgba(255,255,255,.45); }
-  100% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
-}
-
-/* -------------------------------------
-   SPLIT SECTION
--------------------------------------- */
-
-.split-section {
-  display: flex;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.split-image img {
-  width: 330px;
-  border-radius: 14px;
-}
-
-.split-text {
-  max-width: 450px;
-}
-
-/* -------------------------------------
-   FOOTER
--------------------------------------- */
-
-footer {
-  background: var(--background);
-  text-align: center;
-  padding: 3rem 0 2rem;
-  opacity: 0.8;
-}
-
-/* -------------------------------------
-   RESPONSIV
--------------------------------------- */
-
+/* RESPONSIV NAV */
 @media (max-width: 900px) {
   .nav-links {
     display: none;
@@ -263,25 +123,4 @@ footer {
   .nav-toggle {
     display: block;
   }
-
-  .hero-flex {
-    flex-direction: column;
-  }
-
-  .hero-text,
-  .hero-image {
-    width: 100%;
-  }
 }
-.nav-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: .6rem;
-  align-items: center;
-}
-

@@ -11,7 +11,7 @@
   <style>
     /* APRIKOS PRIKKETE BAKGRUNN */
     body {
-      background-color: var(--bg);
+      background-color: var(--background);
       background-image:
         radial-gradient(var(--box) 1px, transparent 1px),
         radial-gradient(var(--box) 1px, transparent 1px);
@@ -48,7 +48,7 @@
       }
     }
 
-    /* KARUSELL – SAMME SOM TILBAKEMELDINGER */
+    /* KARUSELL */
     .carousel-wrapper {
       margin: 4rem auto;
       max-width: 900px;
@@ -56,18 +56,24 @@
     }
 
     .carousel {
-      display: flex;
+      width: 100%;
       overflow: hidden;
-      border-radius: 16px;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: 100%;
     }
 
     .carousel-item {
       min-width: 100%;
+      flex-shrink: 0;
       padding: 3rem;
       background: var(--box);
       text-align: center;
       border-radius: 16px;
-      transition: 0.5s ease;
       box-shadow: 0 12px 30px var(--shadow);
     }
 
@@ -92,15 +98,39 @@
       font-size: 1.4rem;
       color: var(--text);
       box-shadow: 0 5px 20px rgba(0,0,0,.15);
+      z-index: 10;
     }
+
+    .carousel-btn.prev { left: -1rem; }
+    .carousel-btn.next { right: -1rem; }
 
     .carousel-btn:hover {
       background: #9AB893;
       transform: translateY(-50%) scale(1.05);
     }
 
-    .carousel-btn.prev { left: -1rem; }
-    .carousel-btn.next { right: -1rem; }
+    /* DOTS */
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #F4C7B7;
+      opacity: 0.35;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .dot.active {
+      opacity: 1;
+      transform: scale(1.25);
+    }
 
     @media (max-width: 600px) {
       .carousel-btn { display: none; }
@@ -198,41 +228,46 @@
   <h2 class="brand-name">Samarbeidspartnere</h2>
 </section>
 
+
+<!-- KARUSELL -->
 <div class="carousel-wrapper fade-in">
   <button class="carousel-btn prev">❮</button>
   <button class="carousel-btn next">❯</button>
 
-  <div class="carousel" id="carousel">
+  <div class="carousel">
+    <div class="carousel-track" id="carousel">
 
-    <!-- Erika -->
-    <div class="carousel-item">
-      <img src="images/erika.jpeg" alt="Erika Ribu">
-      <h2>Erika Ribu</h2>
-      <h4>Skriveveileder · Reader · Healer</h4>
-      <p>“Mitt mål er å hjelpe mennesker til å finne sin sannhet.<p>
-      <p></p>Jeg gjør dette via readinger, healing, skrivekurs og veiledning.”</p>
-      <a href="https://erikaribu.no" class="btn">Nettside</a>
+      <!-- Erika -->
+      <div class="carousel-item">
+        <img src="images/erika.jpeg" alt="Erika Ribu">
+        <h2>Erika Ribu</h2>
+        <h4>Skriveveileder · Reader · Healer</h4>
+        <p>“Mitt mål er å hjelpe mennesker til å finne sin sannhet. Jeg gjør dette via readinger, healing, skrivekurs og veiledning.”</p>
+        <a href="https://erikaribu.no" class="btn">Nettside</a>
+      </div>
+
+      <!-- Kari Mette -->
+      <div class="carousel-item">
+        <img src="images/karimette.jpg" alt="Kari Mette B. Tilley">
+        <h2>Kari Mette Brunvatne Tilley</h2>
+        <h4>Kunstner · Illustratør · Klarsynt healer</h4>
+        <p>Kunstneren bak illustrasjonene i Traumekvartetten og bildene som preger La Masken Falle.</p>
+        <a href="https://karimette.com" class="btn">Nettside</a>
+      </div>
+
+      <!-- Santa -->
+      <div class="carousel-item">
+        <img src="images/santamaria.jpg" alt="Santa Samara">
+        <h2>Santa Samara</h2>
+        <h4>Voice of the Roots</h4>
+        <p>Santa arbeider med stemmen som helbredende verktøy og leder mennesker inn i kraftfulle autentiske stemmeprosesser.</p>
+        <a href="https://voiceoftheroots.com" class="btn">Nettside</a>
+      </div>
+
     </div>
-
-    <!-- Kari Mette -->
-    <div class="carousel-item">
-      <img src="images/karimette.jpg" alt="Kari Mette B. Tilley">
-      <h2>Kari Mette Brunvatne Tilley</h2>
-      <h4>Kunstner · Illustratør · Klarsynt healer</h4>
-      <p>Kunstneren bak illustrasjonene i Traumekvartetten og bildene som preger La Masken Falle.</p>
-      <a href="https://karimette.com" class="btn">Nettside</a>
-    </div>
-
-    <!-- Santa -->
-    <div class="carousel-item">
-      <img src="images/santamaria.jpg" alt="Santa Samara">
-      <h2>Santa Samara</h2>
-      <h4>Voice of the Roots</h4>
-      <p>Santa arbeider med stemmen som helbredende verktøy og leder mennesker inn i kraftfulle autentiske stemmeprosesser.</p>
-      <a href="https://voiceoftheroots.com" class="btn">Nettside</a>
-    </div>
-
   </div>
+
+  <div class="dots" id="dots"></div>
 </div>
 
 
@@ -257,7 +292,7 @@
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
-  /* Dropdowns */
+  /* Dropdown */
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -268,22 +303,59 @@
     document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
   });
 
-  /* Carousel */
-  const carousel = document.getElementById("carousel");
-  const items = document.querySelectorAll(".carousel-item");
+  /* KARUSELL SCRIPT */
+  const track = document.getElementById("carousel");
+  const slides = document.querySelectorAll(".carousel-item");
+  const dotsContainer = document.getElementById("dots");
+
   let index = 0;
 
-  document.querySelector(".next").addEventListener("click", () => {
-    index = (index + 1) % items.length;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+  /* Lag prikker */
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
   });
 
-  document.querySelector(".prev").addEventListener("click", () => {
-    index = (index - 1 + items.length) % items.length;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
-  });
+  const dots = document.querySelectorAll(".dot");
+
+  function updateDots() {
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function goTo(i) {
+    index = i;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % slides.length;
+    goTo(index);
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    goTo(index);
+  };
+
+  /* Autoplay */
+  let autoplay = setInterval(() => {
+    index = (index + 1) % slides.length;
+    goTo(index);
+  }, 6000);
+
+  /* Pause på hover */
+  const wrapper = document.querySelector(".carousel-wrapper");
+  wrapper.onmouseenter = () => clearInterval(autoplay);
+  wrapper.onmouseleave = () => autoplay = setInterval(() => {
+    index = (index + 1) % slides.length;
+    goTo(index);
+  }, 6000);
 </script>
-
 
 </body>
 </html>

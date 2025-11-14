@@ -295,6 +295,42 @@ body {
   transform: translateY(-2px);
 }
 
+.book-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: nowrap; /* Holder ALT på én linje */
+}
+
+.book-item {
+  text-align: center;
+  max-width: 220px;
+}
+
+.book-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.book-btn {
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.book-btn:hover {
+  background: #9AB893;
+  transform: translateY(-2px);
+}
+
 /* -------------------------------------
    FOOTER
 -------------------------------------- */

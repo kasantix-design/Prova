@@ -193,6 +193,13 @@ body {
   text-decoration: none;
   color: var(--text);
 }
+@media (max-width: 900px) {
+  .book-row {
+    flex-wrap: wrap; /* gjør dem responsive */
+    justify-content: center;
+  }
+}
+
 
 /* -------------------------------------
    HERO-SEKSJON

@@ -1,31 +1,80 @@
 /* -------------------------------------
-   NAV BAR – ENDELIG RIKTIG
+   FARGER
+-------------------------------------- */
+:root {
+  --background: #F5F2E8;   /* lin / sand */
+  --box: #F8E4D3;          /* lys aprikos */
+  --text: #2E2E2E;
+  --accent: #A8C3A0;       /* salviegrønn */
+  --shadow: rgba(0, 0, 0, 0.06);
+}
+
+/* -------------------------------------
+   GENERELT
+-------------------------------------- */
+body {
+  margin: 0;
+  background: var(--background);
+  font-family: "Lora", serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.content-area {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+.content-box {
+  background: var(--box);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin: 4rem 0;
+  box-shadow: 0 10px 30px var(--shadow);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .9s;
+}
+
+.content-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------
+   KNAPPER
 -------------------------------------- */
 
-.nav-header {
-  background: var(--background);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0.8rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* Salviegrønne knapper */
+.btn {
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s ease;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #9AB893;
+  transform: translateY(-2px);
 }
 
-/* Hovedlinjen i nav */
-.nav-row {
-  display: flex;
-  justify-content: space-between; /* dropdowns til venstre, knapper til høyre */
-  align-items: center;
-}
-
-/* Venstre side: logo + dropdowns */
-.left-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-/* Navbar-knapper (kun linfarge) */
+/* NAV-knapper (linfarget) */
 .nav-btn {
   background: var(--background);
   border: 2px solid rgba(0,0,0,0.12);
@@ -34,26 +83,53 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.25s;
+  transition: .25s ease;
+  color: var(--text);
 }
-
 .nav-btn:hover {
   background: #ffffff80;
   transform: translateY(-2px);
 }
 
-/* Høyre side: vanlige knapper */
-.nav-links {
+/* -------------------------------------
+   NAVBAR
+-------------------------------------- */
+
+.nav-header {
+  background: var(--background);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-nav {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 
 .logo-img {
-  height: 40px;
+  height: 50px;
 }
 
-/* DROPDOWN */
+/* Høyre side av navbar */
+.nav-links {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* -------------------------------------
+   DROPDOWN
+-------------------------------------- */
 .dropdown {
   position: relative;
 }
@@ -67,7 +143,7 @@
   min-width: 180px;
   top: 42px;
   padding: 0.5rem;
-  z-index: 200;
+  z-index: 300;
 }
 
 .dropdown.show .dropdown-content {
@@ -81,12 +157,14 @@
   color: var(--text);
   border-radius: 8px;
 }
-
 .dropdown-content a:hover {
   background: #ffffff80;
 }
 
-/* MOBILMENY */
+/* -------------------------------------
+   MOBILMENY
+-------------------------------------- */
+
 .nav-toggle {
   display: none;
   background: none;
@@ -98,8 +176,9 @@
   display: none;
   flex-direction: column;
   padding: 1rem 2rem;
+  background: var(--background);
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
-
 .mobile-menu.active {
   display: flex;
 }
@@ -115,12 +194,143 @@
   color: var(--text);
 }
 
-/* RESPONSIV NAV */
+/* -------------------------------------
+   HERO-SEKSJON
+-------------------------------------- */
+
+.hero-flex {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 40%;
+  min-width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.hero-text {
+  width: 50%;
+  min-width: 300px;
+}
+
+.brand-name {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  margin: 0.7rem 0;
+}
+
+/* Glitter */
+.glitter-slow {
+  animation: glitter 5.8s infinite ease-in-out alternate;
+}
+
+@keyframes glitter {
+  0% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
+  50% { text-shadow: 0 0 7px rgba(255,255,255,.45); }
+  100% { text-shadow: 0 0 2px rgba(255,255,255,.25); }
+}
+
+/* -------------------------------------
+   SPLIT SECTION
+-------------------------------------- */
+
+.split-section {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.split-image img {
+  width: 330px;
+  border-radius: 14px;
+}
+
+.split-text {
+  max-width: 450px;
+}
+
+/* -------------------------------------
+   BOKER & PODCAST LAYOUT
+-------------------------------------- */
+
+.book-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.book-item {
+  width: 22%;
+  min-width: 220px;
+  text-align: center;
+}
+
+.book-item img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow);
+  margin-bottom: 0.7rem;
+}
+
+.book-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.book-btn:hover {
+  background: #9AB893;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------
+   FOOTER
+-------------------------------------- */
+footer {
+  background: var(--background);
+  text-align: center;
+  padding: 3rem 0 2rem;
+  opacity: 0.8;
+}
+
+/* -------------------------------------
+   RESPONSIV
+-------------------------------------- */
 @media (max-width: 900px) {
   .nav-links {
     display: none;
   }
   .nav-toggle {
     display: block;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+  }
+  .hero-image,
+  .hero-text {
+    width: 100%;
+  }
+
+  .book-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-item {
+    width: 90%;
   }
 }

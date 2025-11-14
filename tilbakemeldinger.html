@@ -9,7 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* KARUSELL */
+    :root {
+      --dot-color: #F4C7B7;
+    }
+
+    /* --- KARUSELL --- */
     .carousel-wrapper {
       margin: 4rem auto;
       max-width: 900px;
@@ -20,6 +24,7 @@
       display: flex;
       overflow: hidden;
       border-radius: 16px;
+      transition: transform 0.6s ease;
     }
 
     .carousel-item {
@@ -29,7 +34,6 @@
       box-shadow: 0 10px 30px var(--shadow);
       text-align: center;
       border-radius: 16px;
-      transition: 0.5s ease;
     }
 
     .carousel-item img {
@@ -67,6 +71,7 @@
       font-size: 1.4rem;
       color: var(--text);
       box-shadow: 0 5px 20px rgba(0,0,0,.15);
+      z-index: 10;
     }
 
     .carousel-btn:hover {
@@ -76,6 +81,29 @@
 
     .carousel-btn.prev { left: -1rem; }
     .carousel-btn.next { right: -1rem; }
+
+    /* Prikker */
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #F4C7B7;
+      opacity: 0.35;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .dot.active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
 
     @media (max-width: 600px) {
       .carousel-item { padding: 2rem; }
@@ -89,7 +117,6 @@
 <!-- HEADER -->
 <header class="nav-header">
   <div class="nav-row">
-
     <div class="left-nav">
       <a href="index.html" class="logo">
         <img src="images/logo.webp" class="logo-img">
@@ -97,8 +124,6 @@
     </div>
 
     <nav class="nav-links" id="navMenu">
-
-      <!-- Dropdown 1 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -110,7 +135,6 @@
         </div>
       </div>
 
-      <!-- Dropdown 2 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -120,18 +144,15 @@
         </div>
       </div>
 
-      <!-- Enkle knapper -->
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
       <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
-
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
-  <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="skrivekurs.html">Skrivekurs</a>
     <a href="tekstveiledning.html">Tekstveiledning</a>
@@ -150,7 +171,7 @@
 <section class="content-box fade-in" style="text-align:center;">
   <h1 class="brand-name glitter-slow">Tilbakemeldinger</h1>
   <p style="max-width:650px; margin:auto;">
-    Her finner du ekte ord fra mennesker som har deltatt på kurs, fått tekstveiledning eller fulgt reisen gjennom La Masken Falle.
+    Ord fra mennesker som har deltatt på kurs, fått tekstveiledning eller fulgt reisen gjennom La Masken Falle.
   </p>
 </section>
 
@@ -163,28 +184,28 @@
 
   <div class="carousel" id="carousel">
 
-    <!-- 1 -->
     <div class="carousel-item">
-      <img src="images/mai2.webp" alt="Person 1">
-      <p>“Mai Camillas arbeid har forandret måten jeg forstår meg selv på. Hennes kombinasjon av ro, varme og dybde skaper trygghet for ekte transformasjon.”</p>
-      <h4>– Deltaker, skrivekurs</h4>
+      <img src="images/mai2.webp">
+      <p>“Mai Camilla skaper en trygg atmosfære hvor jeg virkelig kan vokse som menneske.”</p>
+      <h4>– Kursdeltaker</h4>
     </div>
 
-    <!-- 2 -->
     <div class="carousel-item">
-      <img src="images/lamaskenfalle.jpg" alt="Person 2">
-      <p>“Bøkene hennes traff meg på et sted jeg ikke visste trengte heling. Jeg følte meg sett, forstått og løftet.”</p>
-      <h4>– Leser av Traumekvartetten</h4>
+      <img src="images/lamaskenfalle.jpg">
+      <p>“Bøkene hennes traff meg dypt. De forandret måten jeg ser på meg selv.”</p>
+      <h4>– Leser</h4>
     </div>
 
-    <!-- 3 -->
     <div class="carousel-item">
-      <img src="images/podcast.webp" alt="Person 3">
-      <p>“Podcasten gir innsikt jeg tar med meg hver uke. Autentisk, ærlig og full av kjærlighet.”</p>
-      <h4>– Fast lytter</h4>
+      <img src="images/podcast.webp">
+      <p>“Podcasten hennes er en av få som virkelig gir både ro og innsikt.”</p>
+      <h4>– Lytter</h4>
     </div>
 
   </div>
+
+  <!-- Prikker -->
+  <div class="dots" id="dots"></div>
 </div>
 
 
@@ -193,9 +214,6 @@
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
 
-
-
-<!-- SCRIPTS -->
 <script>
   /* Fade */
   const boxes = document.querySelectorAll('.fade-in');
@@ -204,39 +222,88 @@
   }, { threshold: 0.12 });
   boxes.forEach(b => obs.observe(b));
 
-
   /* Hamburger */
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
-
+  document.getElementById('navToggle').onclick = () =>
+    document.getElementById('mobileMenu').classList.toggle('active');
 
   /* Dropdowns */
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.onclick = e => {
       e.stopPropagation();
-      this.parentElement.classList.toggle('show');
-    });
+      btn.parentElement.classList.toggle('show');
+    };
   });
-  document.addEventListener('click', () => {
+  document.onclick = () =>
     document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
-  });
 
 
-  /* KARUSELL SCRIPT */
+
+  /* --- KARUSELL SCRIPT --- */
   const carousel = document.getElementById("carousel");
   const items = document.querySelectorAll(".carousel-item");
+  const dotsContainer = document.getElementById("dots");
+
   let index = 0;
 
-  document.querySelector(".next").addEventListener("click", () => {
-    index = (index + 1) % items.length;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+  // Lag prikker
+  items.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
   });
 
-  document.querySelector(".prev").addEventListener("click", () => {
-    index = (index - 1 + items.length) % items.length;
+  const dots = document.querySelectorAll(".dot");
+
+  function updateDots() {
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function goTo(i) {
+    index = i;
     carousel.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % items.length;
+    goTo(index);
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + items.length) % items.length;
+    goTo(index);
+  };
+
+  /* Auto-play */
+  let autoplay = setInterval(() => {
+    index = (index + 1) % items.length;
+    goTo(index);
+  }, 6000);
+
+  /* Pause når musen er over */
+  const wrapper = document.querySelector(".carousel-wrapper");
+  wrapper.onmouseenter = () => clearInterval(autoplay);
+  wrapper.onmouseleave = () => autoplay = setInterval(() => {
+    index = (index + 1) % items.length;
+    goTo(index);
+  }, 6000);
+
+  /* Swipe for mobil */
+  let startX = 0;
+
+  carousel.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
   });
+
+  carousel.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 40) document.querySelector(".next").click();
+    if (endX - startX > 40) document.querySelector(".prev").click();
+  });
+
 </script>
 
 </body>

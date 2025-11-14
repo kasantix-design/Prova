@@ -273,3 +273,15 @@ footer {
     width: 100%;
   }
 }
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+

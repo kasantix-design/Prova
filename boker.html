@@ -4,24 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bøker – La Masken Falle</title>
+
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER / NAVBAR (samme som index) -->
 <header class="nav-header">
 
   <div class="nav-row">
 
-    <!-- VENSTRE -->
+    <!-- VENSTRE: LOGO + DROP-DOWNS -->
     <div class="left-nav">
       <a href="index.html" class="logo">
         <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
       </a>
 
-      <!-- DROPDOWN 1 -->
+      <!-- Dropdown 1 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
@@ -33,7 +34,7 @@
         </div>
       </div>
 
-      <!-- DROPDOWN 2 -->
+      <!-- Dropdown 2 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -44,110 +45,110 @@
       </div>
     </div>
 
-    <!-- HØYRE -->
-    <nav class="nav-links">
+    <!-- HØYRE: VANLIGE KNAPPER -->
+    <nav class="nav-links" id="navMenu">
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
       <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
-
   </div>
 
-  <!-- MOBILMENY -->
+  <!-- Mobilmeny -->
   <div class="mobile-menu" id="mobileMenu">
-
-    <div class="mobile-dropdown">
-      <span class="mobile-title">Tjenester</span>
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="tekstveiledning.html">Tekstveiledning</a>
-      <a href="boker.html">Bøker</a>
-      <a href="podcast.html">Podcaster</a>
-      <a href="blogg.html">Blogg</a>
-    </div>
-
-    <div class="mobile-dropdown">
-      <span class="mobile-title">Arrangementer</span>
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="foredrag.html">Foredrag</a>
-      <a href="konferanser.html">Konferanser</a>
-    </div>
-
-    <a href="om-oss.html">Om oss</a>
+    <a href="skrivekurs.html">Skrivekurs</a>
+    <a href="tekstveiledning.html">Tekstveiledning</a>
+    <a href="boker.html">Bøker</a>
+    <a href="podcast.html">Podcaster</a>
+    <a href="blogg.html">Blogg</a>
     <a href="kontakt.html">Kontakt</a>
+    <a href="om-oss.html">Om oss</a>
     <a href="medlem.html">Medlem</a>
-
   </div>
 
 </header>
 
-
-
-<!-- HERO -->
+<!-- HERO-SEKSJON -->
 <main class="content-area">
 
-  <section class="content-box hero fade-in" style="padding:4rem 2rem; text-align:center;">
-    <h1 class="brand-name" style="margin-bottom:1rem;">Våre bøker</h1>
+  <section class="content-box hero fade-in" style="text-align:center;">
+    <h1 class="brand-name glitter-slow">Bøker av Mai Camilla Munkejord</h1>
     <p style="max-width:650px; margin:auto;">
-      Utforsk bøker skrevet for deg som ønsker vekst, innsikt og indre transformasjon.
+      Her finner du bøkene som inviterer til innsikt, vekst og indre transformasjon.
     </p>
   </section>
 
+  <!-- BOKGRID -->
+  <section class="content-box fade-in">
 
-<!-- ⭐ HORISONTAL BOKRAD -->
-<section class="fade-in" style="margin-top:2rem;">
-  <div class="book-row">
+    <div class="book-grid">
 
-    <!-- 1 -->
-    <div class="book-item">
-      <h4>Tittel 1</h4>
-      <img src="images/lamaskenfalle.jpg" alt="Tittel 1">
-      <a class="btn" href="#">Bestill her</a>
+      <!-- BOK 1 -->
+      <div class="book-item">
+        <img src="images/bok1.jpg" alt="Tittel 1">
+        <h3>Tittel 1</h3>
+        <a class="btn" href="#">Bestill her</a>
+      </div>
+
+      <!-- BOK 2 -->
+      <div class="book-item">
+        <img src="images/bok2.jpg" alt="Tittel 2">
+        <h3>Tittel 2</h3>
+        <a class="btn" href="#">Bestill her</a>
+      </div>
+
+      <!-- BOK 3 -->
+      <div class="book-item">
+        <img src="images/bok3.jpg" alt="Tittel 3">
+        <h3>Tittel 3</h3>
+        <a class="btn" href="#">Bestill her</a>
+      </div>
+
+      <!-- BOK 4 -->
+      <div class="book-item">
+        <img src="images/bok4.jpg" alt="Tittel 4">
+        <h3>Tittel 4</h3>
+        <a class="btn" href="#">Bestill her</a>
+      </div>
+
     </div>
 
-    <!-- 2 -->
-    <div class="book-item">
-      <h4>Tittel 2</h4>
-      <img src="images/frifast.jpg" alt="Tittel 2">
-      <a class="btn" href="#">Bestill her</a>
-    </div>
-
-    <!-- 3 -->
-    <div class="book-item">
-      <h4>Tittel 3</h4>
-      <img src="images/morssåret.jpg" alt="Tittel 3">
-      <a class="btn" href="#">Bestill her</a>
-    </div>
-
-    <!-- 4 -->
-    <div class="book-item">
-      <h4>Tittel 4</h4>
-      <img src="images/denjeger.jpg" alt="Tittel 4">
-      <a class="btn" href="#">Bestill her</a>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
-
 
 <footer>
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
 
-
 <!-- SCRIPT -->
 <script>
-  // Fade-in
+  // fade-in
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   boxes.forEach(b => obs.observe(b));
 
-  // Hamburger
+  // hamburger
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('acti
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  // dropdowns
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+</script>
+
+</body>
+</html>
+

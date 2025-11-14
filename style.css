@@ -334,3 +334,27 @@ footer {
     width: 90%;
   }
 }
+/*.........Ny...
+/* Rad 1: logo alene */
+.header-logo-row {
+  text-align: left;
+  padding-bottom: 0.4rem;
+}
+
+/* Rad 2: tittel og knapper på samme linje */
+.header-title-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Tittel */
+.header-title {
+  font-size: 1.6rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+

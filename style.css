@@ -336,3 +336,41 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Ny dropdown-støtte for ARRANGEMENTER */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--background);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.dropdown-content a:hover {
+  background: #ffffff60;
+}
+
+/* Mobilmeny */
+.mobile-title {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+

@@ -11,19 +11,23 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 <header class="nav-header">
   <div class="nav-row">
 
     <div class="left-nav">
-      <a href="index.html"><img src="images/logo.webp" class="logo-img"></a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img">
+      </a>
     </div>
 
     <nav class="nav-links" id="navMenu">
+
+      <!-- Dropdown 1 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Tjenester ▾</button>
         <div class="dropdown-content">
-          <a href="skrivekurs.html">Skrivkurs</a>
+          <a href="skrivekurs.html">Skrivekurs</a>
           <a href="tekstveiledning.html">Tekstveiledning</a>
           <a href="boker.html">Bøker</a>
           <a href="podcast.html">Podcaster</a>
@@ -31,6 +35,7 @@
         </div>
       </div>
 
+      <!-- Dropdown 2 -->
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
@@ -40,14 +45,17 @@
         </div>
       </div>
 
+      <!-- Enkle knapper -->
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
       <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
+  <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="skrivekurs.html">Skrivekurs</a>
     <a href="tekstveiledning.html">Tekstveiledning</a>
@@ -60,43 +68,94 @@
   </div>
 </header>
 
+
 <!-- HERO -->
-<main class="content-area">
 <section class="content-box fade-in hero-flex">
-  <img src="images/mai2.webp" class="hero-image">
+
+  <img src="images/mai2.webp" alt="Mai Camilla Munkejord" class="hero-image">
+
   <div class="hero-text">
-    <h1 class="brand-name glitter-slow">Kontakt</h1>
-    <p>Har du spørsmål, ønsker samarbeid, eller vil du booke en samtale?</p>
+    <h2 class="hero-name">Kontakt meg</h2>
+    <p class="hero-title">Har du spørsmål? Ikke nøl med å ta kontakt.</p>
+    <h1 class="brand-name glitter-slow">LA MASKEN FALLE</h1>
   </div>
+
 </section>
 
-<!-- FORM -->
-<section class="content-box fade-in">
-  <h2>Send en melding</h2>
 
-  <form name="kontakt" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="kontakt">
+<!-- KONTAKT-SEKSJON -->
+<main class="content-area fade-in">
 
-    <label>Navn</label>
-    <input type="text" name="navn" required>
+  <section class="content-box fade-in">
+    <h2>Send ei melding</h2>
 
-    <label>E-post</label>
-    <input type="email" name="email" required>
+    <div class="form-green-box">
 
-    <label>Melding</label>
-    <textarea name="melding" rows="6" required></textarea>
+      <form name="kontakt" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="kontakt">
 
-    <button type="submit" class="btn">Send melding</button>
-  </form>
-</section>
+        <label>Namnet ditt</label>
+        <input type="text" name="navn" required>
+
+        <label>E-post</label>
+        <input type="email" name="email" required>
+
+        <label>Melding</label>
+        <textarea name="melding" rows="6" required></textarea>
+
+        <button type="submit" class="btn form-btn-green">Send melding</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- Info seksjon -->
+  <section class="content-box fade-in">
+    <h3>Andre måtar å kontakte meg på</h3>
+    <p>
+      Du kan også nå meg direkte på e-post:<br>
+      <strong>post@lamaskenfalle.no</strong>
+    </p>
+
+    <p>
+      Eg prøver å svare innan 1–3 virkedagar.
+    </p>
+  </section>
+
 </main>
 
-<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
 
+<footer>
+  © 2025 La Masken Falle – Mai Camilla Munkejord
+</footer>
+
+
+<!-- SCRIPT -->
 <script>
-const navToggle3 = document.getElementById('navToggle');
-const mobileMenu3 = document.getElementById('mobileMenu');
-navToggle3.addEventListener('click', () => mobileMenu3.classList.toggle('active'));
+  // fade-in
+  const boxes = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
+
+  // hamburger
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  // dropdowns
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('show');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
 </script>
 
 </body>

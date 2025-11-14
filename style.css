@@ -283,3 +283,30 @@ footer {
     display: block;
   }
 }
+/* --- Glitter effekt på hero-tekst --- */
+
+.hero-text h2,
+.hero-text p,
+.hero-text .brand-name {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(
+    90deg,
+    var(--text),
+    var(--text),
+    #fffbe8,
+    var(--text),
+    var(--text)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitter 4.5s linear infinite;
+}
+
+@keyframes glitter {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

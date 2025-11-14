@@ -11,17 +11,16 @@
 
 <body>
 
-<!-- HEADER (samme som index) -->
+<!-- HEADER (identisk med index) -->
 <header class="nav-header">
 
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
-    </a>
-  </div>
-
   <div class="nav-row">
-    <nav class="nav-links" id="navMenu">
+
+    <!-- VENSTRE SIDE -->
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="La Masken Falle logo" class="logo-img">
+      </a>
 
       <!-- DROPDOWN TJENESTER -->
       <div class="dropdown">
@@ -39,61 +38,75 @@
       <div class="dropdown">
         <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
         <div class="dropdown-content">
-          <a href="#">Skrivekurs</a>
-          <a href="#">Foredrag</a>
-          <a href="#">Konferanser</a>
+          <a href="skrivekurs.html">Skrivekurs</a>
+          <a href="foredrag.html">Foredrag</a>
+          <a href="konferanser.html">Konferanser</a>
         </div>
       </div>
+    </div>
 
+    <!-- HØYRE SIDE -->
+    <nav class="nav-links">
       <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
       <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-      <button class="nav-btn" onclick="location.href='logginn.html'">Medlem</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
     </nav>
 
     <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 
-  <!-- Mobilmeny -->
+  <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Hjem</a>
 
-    <p class="mobile-menu-title">Tjenester</p>
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcaster</a>
-    <a href="blogg.html">Blogg</a>
+    <div class="mobile-dropdown">
+      <span class="mobile-title">Tjenester</span>
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="tekstveiledning.html">Tekstveiledning</a>
+      <a href="boker.html">Bøker</a>
+      <a href="podcast.html">Podcaster</a>
+      <a href="blogg.html">Blogg</a>
+    </div>
 
-    <p class="mobile-menu-title">Arrangementer</p>
-    <a href="#">Skrivekurs</a>
-    <a href="#">Foredrag</a>
-    <a href="#">Konferanser</a>
+    <div class="mobile-dropdown">
+      <span class="mobile-title">Arrangementer</span>
+      <a href="skrivekurs.html">Skrivekurs</a>
+      <a href="foredrag.html">Foredrag</a>
+      <a href="konferanser.html">Konferanser</a>
+    </div>
 
     <a href="om-oss.html">Om oss</a>
     <a href="kontakt.html">Kontakt</a>
-    <a href="logginn.html">Medlem</a>
+    <a href="medlem.html">Medlem</a>
+
   </div>
 
 </header>
 
 
+
 <!-- HERO -->
 <section class="content-box hero fade-in" style="text-align:center; padding:4rem 2rem;">
-  <img src="images/mai2.webp" alt="Mai Camilla Munkejord" class="hero-image" style="max-width:220px; border-radius:8px; margin-bottom:1rem;">
+  <img src="images/mai2.webp" alt="Mai Camilla Munkejord" class="hero-image" style="max-width:220px; border-radius:8px; margin-bottom:1.2rem;">
+
   <h1 class="brand-name">Podcaster av Mai Camilla Munkejord</h1>
+
   <p style="max-width:700px; margin:auto;">
     Ærlige, dype og innsiktsfulle samtaler om traumer, heling, relasjoner, nevrodivergens og personlig vekst.
   </p>
 </section>
 
 
+
 <!-- INNHOLD -->
 <main class="content-area">
+
+
 
   <!-- LA MASKEN FALLE PODCAST -->
   <section class="content-box fade-in">
 
     <h2>La Masken Falle – podcast</h2>
+
     <p>
       En kompromissløst ærlig podcast som kombinerer personlig erfaring og faglig kunnskap om traumer, heling,
       normalitet, nevromangfold, foreldrerollen, kropp, helse og bevissthet.
@@ -105,11 +118,14 @@
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
     </iframe>
 
-    <button class="btn" onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
+    <button class="btn"
+      onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
       Lytt til alle episodene
     </button>
 
   </section>
+
+
 
 
   <!-- BOKPRAT PODCAST -->
@@ -127,7 +143,8 @@
     <p><em>Pris for forlag: 8000 kr</em></p>
     <p><em>Pris for egenpubliserende forfattere: 5000 kr</em></p>
 
-    <img src="images/bokprat.jpg" alt="Bokprat Podcast" style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
+    <img src="images/bokprat.jpg" alt="Bokprat Podcast"
+      style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
 
     <iframe style="border-radius:12px"
       src="https://open.spotify.com/embed/show/5MsosxSuO293LjbpcktyXg?utm_source=generator"
@@ -140,9 +157,12 @@
 </main>
 
 
+
 <footer>
   © 2025 La Masken Falle – Mai Camilla Munkejord
 </footer>
+
+
 
 <!-- SCRIPT -->
 <script>

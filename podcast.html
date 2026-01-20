@@ -6,7 +6,9 @@
   <title>Podcast – La Masken Falle</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer_boxicons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -14,164 +16,131 @@
 <!-- HEADER -->
 <header class="nav-header">
   <div class="nav-row">
-
-   <div class="left-nav">
-  <a href="index.html" class="logo">
-    <img src="images/logo.webp" class="logo-img">
-  </a>
-</div>
-
-<nav class="nav-links" id="navMenu">
-
-  <!-- Dropdown 1 -->
-  <div class="dropdown">
-    <button class="nav-btn dropdown-btn">Tjenester ▾</button>
-    <div class="dropdown-content">
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="tekstveiledning.html">Tekstveiledning</a>
-      <a href="boker.html">Bøker</a>
-      <a href="podcast.html">Podcaster</a>
-      <a href="blogg.html">Blogg</a>
+    <div class="left-nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img" alt="Logo">
+      </a>
     </div>
-  </div>
 
-  <!-- Dropdown 2 -->
-  <div class="dropdown">
-    <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
-    <div class="dropdown-content">
-      <a href="skrivekurs.html">Skrivekurs</a>
-      <a href="foredrag.html">Foredrag</a>
-      <a href="konferanser.html">Konferanser</a>
-    </div>
-  </div>
+    <!-- DESKTOP-MENY -->
+    <nav class="nav-links" id="navMenu">
+      <button class="nav-btn" onclick="location.href='index.html'"><i class='bx bx-home'></i> Hjem</button>
+      <button class="nav-btn" onclick="location.href='boker.html'"><i class='bx bx-book'></i> Bøker</button>
+      <button class="nav-btn" onclick="location.href='podcast.html'"><i class='bx bx-microphone'></i> Podcaster</button>
+      <button class="nav-btn" onclick="location.href='foredrag.html'"><i class='bx bx-chalkboard'></i> Foredrag</button>
+      <button class="nav-btn" onclick="location.href='skrivekurs.html'"><i class='bx bx-edit'></i> Kurs</button>
+      <button class="nav-btn" onclick="location.href='konferanser.html'"><i class='bx bx-group'></i> Relasjonskraft</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'"><i class='bx bx-user-circle'></i> Medlemsside</button>
+    </nav>
 
-  <!-- Enkle knapper -->
-  <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
-  <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
-  <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-  <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
-
-</nav>
-
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <!-- BURGER-IKON -->
+    <button class="nav-toggle" id="navToggle"><i class='bx bx-menu'></i></button>
   </div>
 
   <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcaster</a>
-    <a href="blogg.html">Blogg</a>
-    <a href="om-oss.html">Om oss</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="medlem.html">Medlem</a>
+    <a href="index.html"><i class='bx bx-home'></i> Hjem</a>
+    <a href="boker.html"><i class='bx bx-book'></i> Bøker</a>
+    <a href="podcast.html"><i class='bx bx-microphone'></i> Podcaster</a>
+    <a href="foredrag.html"><i class='bx bx-chalkboard'></i> Foredrag</a>
+    <a href="skrivekurs.html"><i class='bx bx-edit'></i> Kurs</a>
+    <a href="konferanser.html"><i class='bx bx-group'></i> Relasjonskraft</a>
+    <a href="medlem.html"><i class='bx bx-user-circle'></i> Medlemsside</a>
   </div>
 </header>
-
-
 
 <!-- HERO -->
 <main class="content-area">
   <section class="content-box fade-in hero-flex">
-
     <img src="images/bad.jpg" alt="Mai Camilla Munkejord" class="hero-image">
-
     <div class="hero-text">
       <h1 class="hero-name">Podcaster</h1>
       <h2 class="brand-name glitter-slow">Mai Camilla Munkejord</h2>
     </div>
-
   </section>
-
-
-
-<!-- INNHOLD -->
-<main class="content-area">
-
-
 
   <!-- LA MASKEN FALLE PODCAST -->
   <section class="content-box fade-in">
-
     <h2>La Masken Falle – podcast</h2>
-
     <p>
       En kompromissløst ærlig podcast som kombinerer personlig erfaring og faglig kunnskap om traumer, heling,
       normalitet, nevromangfold, foreldrerollen, kropp, helse og bevissthet.
     </p>
-      <img src="images/podcast1.webp" alt="Bokprat Podcast"
-      style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
+    <img src="images/podcast1.webp" alt="Bokprat Podcast"
+         style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
     <iframe style="border-radius:12px; margin-top:1rem;"
-      src="https://open.spotify.com/embed/show/3gWQIyQlfmup0S7bmV9p8G?utm_source=generator"
-      width="100%" height="352" frameborder="0" allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            src="https://open.spotify.com/embed/show/3gWQIyQlfmup0S7bmV9p8G?utm_source=generator"
+            width="100%" height="352" frameborder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
     </iframe>
-
     <button class="btn"
-      onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
+            onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
       Lytt til alle episodene
     </button>
-
   </section>
-
-
-
 
   <!-- BOKPRAT PODCAST -->
   <section class="content-box fade-in">
-
     <h2>Min nye podcast: BokPrat</h2>
-
     <p><strong>I BokPrat inviterer jeg forfattere som virkelig brenner for boken sin.</strong></p>
-
     <p>
       Ønsker du å være gjest? Ta kontakt på
       <a href="mailto:post@lamaskenfalle.com">post@lamaskenfalle.com</a>.
     </p>
-
     <p><em>Pris for forlag: 8000 kr</em></p>
     <p><em>Pris for egenpubliserende forfattere: 5000 kr</em></p>
-
     <img src="images/podcast2.jpg" alt="Bokprat Podcast"
-      style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
-
+         style="max-width:350px; width:100%; margin:1.5rem auto; display:block; border-radius:8px;">
     <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/show/5MsosxSuO293LjbpcktyXg?utm_source=generator"
-      width="100%" height="352" frameBorder="0" allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            src="https://open.spotify.com/embed/show/5MsosxSuO293LjbpcktyXg?utm_source=generator"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
     </iframe>
- <button class="btn"
-      onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
+    <button class="btn"
+            onclick="location.href='https://podcasters.spotify.com/pod/show/lamaskenfalle'">
       Lytt til alle episodene
     </button>
   </section>
-
 </main>
 
-
-
-<footer>
-  © 2025 La Masken Falle – Mai Camilla Munkejord
+<!-- FOOTER MED BOXICONS -->
+<footer class="footer-boxicons">
+  <div class="footer-wrapper">
+    <div class="footer-left">
+      <p><strong>Kontakt:</strong></p>
+      <p><i class='bx bx-phone'></i><a href="tel:+4798765432">+47 987 65 432</a></p>
+      <p><i class='bx bx-envelope'></i><a href="mailto:kontakt@lamaskenfalle.no">kontakt@lamaskenfalle.no</a></p>
+    </div>
+    <div class="footer-center">
+      <p>© 2025 La Masken Falle</p>
+      <p>Mai Camilla Munkejord</p>
+    </div>
+    <div class="footer-right">
+      <p><strong>Følg meg:</strong></p>
+      <p>
+        <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i>Facebook</a><br>
+        <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i>Instagram</a><br>
+        <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin-square'></i>LinkedIn</a><br>
+        <a href="https://pinterest.com" target="_blank"><i class='bx bxl-pinterest'></i>Pinterest</a><br>
+        <a href="https://spotify.com" target="_blank"><i class='bx bxl-spotify'></i>Spotify</a><br>
+        <a href="https://podcasts.apple.com" target="_blank"><i class='bx bxl-apple'></i>Apple Podcast</a>
+      </p>
+    </div>
+  </div>
 </footer>
-
-
 
 <!-- SCRIPT -->
 <script>
-  // fade-in
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   boxes.forEach(b => obs.observe(b));
 
-  // hamburger
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
-  // dropdowns
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();

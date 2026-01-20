@@ -113,22 +113,35 @@ body.heart-conference-layout::before {
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-.angled-image img {
-  width: 100%;
+tilted-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.image-wrapper {
+  width: 260px;
   height: auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.tilt-left img {
   display: block;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  transform: perspective(600px) rotateY(6deg);
+  border-radius: 16px;
+  transition: transform 0.3s;
 }
 
-/* Venstre bilde heller innover */
-.left-img img {
-  transform: rotate(-5deg);
-}
-
-/* Høyre bilde heller motsatt vei */
-.right-img img {
-  transform: rotate(5deg);
+.tilt-right img {
+  display: block;
+  width: 100%;
+  transform: perspective(600px) rotateY(-6deg);
+  border-radius: 16px;
+  transition: transform 0.3s;
 }
 
 /* Responsiv mobilvisning */

@@ -1,7 +1,6 @@
 /* -------------------------------------
-   FOOTER STIL MED BOXICONS – OPPDATERT
+   FOOTER – JUSTERT FOR JEvN BUNNLINJE
 -------------------------------------- */
-
 .footer-boxicons {
   background: var(--background);
   padding: 2.5rem 1.5rem;
@@ -10,35 +9,29 @@
 }
 
 .footer-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  justify-content: center;         /* sentrer kolonnene samlet */
-  align-items: stretch;            /* alle kolonner får lik høyde */
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
+
+  align-items: end; /* 📏 Sikrer at boksene flukter nederst */
 }
 
-/* Felles stil for alle kolonner */
+/* Hver boks */
 .footer-left, .footer-center, .footer-right {
-  flex: 1 1 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  /* jevn vertikal fordeling */
-  background: rgba(255, 255, 255, 0.5);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  min-height: 220px;               /* sikrer visuelt lik høyde ved lite innhold */
+  justify-content: space-between; /* Jevn høyde */
 }
 
-/* Midt-kolonne sentrert */
+/* Midten sentrert */
 .footer-center {
   text-align: center;
   opacity: 0.8;
 }
 
-/* Lenker og ikoner */
+/* Linker */
 .footer-boxicons a {
   color: var(--text);
   text-decoration: none;
@@ -48,32 +41,32 @@
   text-decoration: underline;
 }
 
+/* Ikoner */
 .footer-boxicons i {
   margin-right: 0.5rem;
   vertical-align: middle;
   font-size: 1.2rem;
 }
 
-/* Tekst-spacing */
+/* Avstand mellom linjene */
 .footer-boxicons p {
   margin: 0.6rem 0;
-  line-height: 1.6;
 }
 
+/* Sterk tekst */
 .footer-boxicons strong {
   display: block;
   margin-bottom: 0.4rem;
 }
 
-/* RESPONSIV FOOTER */
+/* RESPONSIV */
 @media (max-width: 768px) {
   .footer-wrapper {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
   .footer-left, .footer-center, .footer-right {
-    flex: 1 1 100%;
+    align-items: center;
   }
 }

@@ -1,6 +1,7 @@
 /* -------------------------------------
    FOOTER STIL MED BOXICONS
 -------------------------------------- */
+
 .footer-boxicons {
   background: var(--background);
   padding: 2.5rem 1.5rem;
@@ -23,9 +24,14 @@
   font-weight: 600;
 }
 
+.footer-boxicons a:hover {
+  text-decoration: underline;
+}
+
 .footer-boxicons i {
   margin-right: 0.5rem;
   vertical-align: middle;
+  font-size: 1.2rem;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -41,10 +47,20 @@
   margin: 0.6rem 0;
 }
 
+.footer-boxicons strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* RESPONSIV FOOTER */
 @media (max-width: 768px) {
   .footer-wrapper {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    flex: 1 1 100%;
   }
 }

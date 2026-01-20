@@ -30,6 +30,15 @@
   text-align: center;
   opacity: 0.8;
 }
+.footer-left {
+  align-items: flex-start;  /* venstrejustert */
+  text-align: left;
+}
+
+.footer-right {
+  align-items: flex-end;    /* høyrejustert */
+  text-align: right;
+}
 
 /* Linker */
 .footer-boxicons a {

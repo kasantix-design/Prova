@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Masken Falle – Mai Camilla Munkejord</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer_boxicons.css"> <!-- 👈 Boxicons-footer stil -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- Boxicons ikoner -->
 </head>
 
 <body>
@@ -152,21 +153,40 @@
   </div>
 </main>
 
-<!-- FOOTER -->
-<footer>
-  © 2025 La Masken Falle – Mai Camilla Munkejord
+<!-- FOOTER – med boxicons -->
+<footer class="footer-boxicons">
+  <div class="footer-wrapper">
+    <div class="footer-left">
+      <p><i class='bx bx-phone' style="color: var(--accent);"></i> <a href="tel:+4799999999">+47 999 99 999</a></p>
+      <p><i class='bx bx-envelope' style="color: var(--accent);"></i> <a href="mailto:post@lamaskenfalle.no">post@lamaskenfalle.no</a></p>
+      <p><i class='bx bx-message-rounded-dots' style="color: var(--accent);"></i> <a href="https://www.instagram.com/lamaskenfalle" target="_blank">Send DM på Instagram</a></p>
+    </div>
+
+    <div class="footer-center">
+      <p>© 2026 <a href="https://lamaskenfalle.com">Lamaskenfalle.com</a></p>
+      <p>Mai Camilla Munkejord</p>
+    </div>
+
+    <div class="footer-right">
+      <p><strong>Følg meg</strong></p>
+      <p><i class='bx bxl-instagram'></i> <a href="https://www.instagram.com/lamaskenfalle" target="_blank">Instagram</a></p>
+      <p><i class='bx bxl-facebook'></i> <a href="https://facebook.com" target="_blank">Facebook</a></p>
+      <p><i class='bx bxl-linkedin'></i> <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+      <p><i class='bx bxl-pinterest'></i> <a href="https://pinterest.com" target="_blank">Pinterest</a></p>
+      <p><i class='bx bxl-spotify'></i> <a href="https://spotify.com" target="_blank">Spotify</a></p>
+      <p><i class='bx bx-microphone'></i> <a href="podcast.html">Podcaster</a></p>
+    </div>
+  </div>
 </footer>
 
 <!-- SCRIPT -->
 <script>
-  // fade-in
   const boxes = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   boxes.forEach(b => obs.observe(b));
 
-  // mobilmeny toggle
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
@@ -174,4 +194,3 @@
 
 </body>
 </html>
-

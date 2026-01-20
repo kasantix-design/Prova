@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Relasjonskraft 2026 – Konferanse</title>
 
-  <!-- Google Fonts og Boxicons -->
+  <!-- Fonts og ikoner -->
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Globale og lokale stiler -->
+  <!-- Stiler -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="konferanse-layout.css">
 </head>
@@ -18,27 +18,14 @@
 
   <!-- Vertikal tittel -->
   <div class="vertical-title">
-  <span class="word">
-    <span>R</span>
-    <span>e</span>
-    <span>l</span>
-    <span>a</span>
-    <span>s</span>
-    <span>j</span>
-    <span>o</span>
-    <span>n</span>
-    <span>s</span>
-  </span>
-  <span class="gap"></span>
-  <span class="word">
-    <span>K</span>
-    <span>r</span>
-    <span>a</span>
-    <span>f</span>
-    <span>t</span>
-  </span>
-</div>
-
+    <span class="word">
+      <span>R</span><span>e</span><span>l</span><span>a</span><span>s</span><span>j</span><span>o</span><span>n</span><span>s</span>
+    </span>
+    <span class="gap"></span>
+    <span class="word">
+      <span>K</span><span>r</span><span>a</span><span>f</span><span>t</span>
+    </span>
+  </div>
 
   <!-- Navigasjon -->
   <nav class="nav-links" id="navMenu" style="justify-content: center; margin: 1rem auto; flex-wrap: wrap;">
@@ -51,32 +38,32 @@
     <button class="nav-btn" onclick="location.href='medlem.html'"><i class='bx bx-user-circle'></i> Medlemsside</button>
   </nav>
 
-<!-- Hero-tekst i egen boks -->
-<section class="heart-box hero-text-box">
-  <div class="hero-text">
-    <h1>Trygge autentiske relasjoner starter i deg selv</h1>
-    <p>
-      Velkommen til dagskonferanse med innsikt, fellesskap og forandring –<br>
-      Konferansen for 2026, 19. september i Oslo
-    </p>
-  </div>
-</section>
+  <!-- Innholdsomslag -->
+  <main class="heart-wrapper">
 
-<!-- Bilder med tilt -->
-<div class="tilted-images">
-  <div class="image-wrapper tilt-left">
-    <img src="images/therese.jpg" alt="Therese Tønning">
-  </div>
-  <div class="image-wrapper tilt-right">
-    <img src="images/mai2.webp" alt="Mai Camilla">
-  </div>
-</div>
+    <!-- HERO: Tekst + bilder + knapp -->
+    <section class="heart-box top-hero-with-images">
+      <div class="hero-text">
+        <h1>Trygge autentiske relasjoner starter i deg selv</h1>
+        <p>
+          Velkommen til dagskonferanse med innsikt, fellesskap og forandring –<br>
+          Konferansen for 2026, 19. september i Oslo
+        </p>
+      </div>
 
-<!-- Bestillingsknapp -->
-<div class="hero-button-wrapper" style="text-align: center; margin-top: 1.5rem;">
-  <a href="#påmelding" class="heart-btn">Reserver din plass</a>
-</div>
+      <div class="tilted-images">
+        <div class="image-wrapper tilt-left">
+          <img src="images/therese.jpg" alt="Therese Tønning">
+        </div>
+        <div class="image-wrapper tilt-right">
+          <img src="images/mai2.webp" alt="Mai Camilla">
+        </div>
+      </div>
 
+      <div style="text-align: center;">
+        <a href="#påmelding" class="heart-btn">Reserver din plass</a>
+      </div>
+    </section>
 
     <!-- Invitasjonstekst -->
     <section class="heart-box">
@@ -97,7 +84,7 @@
       <a href="#påmelding" class="heart-btn">Reserver din plass</a>
     </section>
 
-    <!-- Foredragsholdere og tilbakemelding -->
+    <!-- Foredragsholdere -->
     <section class="heart-box">
       <h2>Møt foredragsholderne våre og se hva deltagerne sa i fjor</h2>
       <div class="speaker-grid">
@@ -115,7 +102,7 @@
       <a href="#påmelding" class="heart-btn">Reserver din plass</a>
     </section>
 
-    <!-- Footer / Kontakt -->
+    <!-- Footer -->
     <section class="heart-box heart-footer" id="påmelding">
       <p>Kontakt: <a href="mailto:konferanse@relasjonskraft.no">konferanse@relasjonskraft.no</a></p>
       <p>Design: Du &nbsp; • &nbsp; Bilder: Canva / Unsplash</p>

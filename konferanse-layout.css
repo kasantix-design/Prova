@@ -16,7 +16,8 @@ body.heart-conference-layout {
 body.heart-conference-layout::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: url('images/hjertebakgrunn.png') no-repeat center center;
@@ -36,7 +37,7 @@ body.heart-conference-layout::before {
   font-weight: bold;
   position: absolute;
   left: 0.5rem;
-  top: 10%;
+  top: 0.5rem; /* 🔄 Endret fra 10% til 0.5rem */
   background: rgba(255, 255, 255, 0.65);
   padding: 1.5rem 1rem;
   border-radius: 12px;
@@ -54,7 +55,7 @@ body.heart-conference-layout::before {
   display: none;
 }
 
-/* Sentral wrapper for innhold */
+/* Wrapper */
 .heart-wrapper {
   max-width: 850px;
   margin: auto;
@@ -65,9 +66,9 @@ body.heart-conference-layout::before {
   z-index: 3;
 }
 
-/* 💡 Lys krem bakgrunn med mer transparens */
+/* Hero og andre bokser */
 .heart-box {
-  background: rgba(255, 250, 235, 0.65); /* Krem + 65 % opasitet */
+  background: rgba(255, 250, 235, 0.5); /* 💡 Mer transparent krem */
   border-radius: 18px;
   padding: 2.5rem 2rem;
   backdrop-filter: blur(8px);
@@ -94,32 +95,22 @@ body.heart-conference-layout::before {
 /* HERO med skråbilder */
 .top-hero-with-images {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
   text-align: center;
 }
 
+/* Hero tekst */
 .hero-text {
-  flex: 1 1 400px;
+  margin-bottom: 1.5rem;
 }
 
-/* Bildekonteiner */
-.angled-image {
-  flex: 1 1 200px;
-  max-width: 220px;
-  overflow: hidden;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-/* Riktig klasse med punktum */
+/* Bilde-område */
 .tilted-images {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .image-wrapper {
@@ -127,7 +118,7 @@ body.heart-conference-layout::before {
   height: auto;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .tilt-left img {
@@ -146,22 +137,6 @@ body.heart-conference-layout::before {
   transition: transform 0.3s;
 }
 
-/* Responsiv mobilvisning */
-@media (max-width: 768px) {
-  .top-hero-with-images {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .angled-image {
-    max-width: 80%;
-  }
-
-  .vertical-title {
-    display: none;
-  }
-}
-
 /* Foredragsholdere og tekst */
 .speaker-grid {
   display: flex;
@@ -176,10 +151,10 @@ body.heart-conference-layout::before {
 .speaker-item img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer-boks */
+/* Footer */
 .heart-footer {
   text-align: center;
   font-size: 0.9rem;
@@ -187,4 +162,20 @@ body.heart-conference-layout::before {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   padding: 1.5rem;
+}
+
+/* Mobilvisning */
+@media (max-width: 768px) {
+  .top-hero-with-images {
+    flex-direction: column;
+  }
+
+  .tilted-images {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vertical-title {
+    display: none;
+  }
 }

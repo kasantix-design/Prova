@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skrivekurs – La Masken Falle</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer_boxicons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -12,49 +15,35 @@
 <!-- HEADER -->
 <header class="nav-header">
   <div class="nav-row">
-
     <div class="left-nav">
-      <a href="index.html"><img src="images/logo.webp" class="logo-img"></a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" class="logo-img" alt="Logo">
+      </a>
     </div>
 
+    <!-- DESKTOP-MENY -->
     <nav class="nav-links" id="navMenu">
-      <div class="dropdown">
-        <button class="nav-btn dropdown-btn">Tjenester ▾</button>
-        <div class="dropdown-content">
-          <a href="skrivekurs.html">Skrivekurs</a>
-          <a href="tekstveiledning.html">Tekstveiledning</a>
-          <a href="boker.html">Bøker</a>
-          <a href="podcast.html">Podcaster</a>
-          <a href="blogg.html">Blogg</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="nav-btn dropdown-btn">Arrangementer ▾</button>
-        <div class="dropdown-content">
-          <a href="foredrag.html">Foredrag</a>
-          <a href="konferanser.html">Konferanser</a>
-        </div>
-      </div>
-
-      <button class="nav-btn" onclick="location.href='om-oss.html'">Om oss</button>
-      <button class="nav-btn" onclick="location.href='tilbakemeldinger.html'">Tilbakemeldinger</button>
-      <button class="nav-btn" onclick="location.href='kontakt.html'">Kontakt</button>
-      <button class="nav-btn" onclick="location.href='medlem.html'">Medlem</button>
+      <button class="nav-btn" onclick="location.href='index.html'"><i class='bx bx-home'></i> Hjem</button>
+      <button class="nav-btn" onclick="location.href='boker.html'"><i class='bx bx-book'></i> Bøker</button>
+      <button class="nav-btn" onclick="location.href='podcast.html'"><i class='bx bx-microphone'></i> Podcaster</button>
+      <button class="nav-btn" onclick="location.href='foredrag.html'"><i class='bx bx-chalkboard'></i> Foredrag</button>
+      <button class="nav-btn" onclick="location.href='skrivekurs.html'"><i class='bx bx-edit'></i> Kurs</button>
+      <button class="nav-btn" onclick="location.href='konferanser.html'"><i class='bx bx-group'></i> Relasjonskraft</button>
+      <button class="nav-btn" onclick="location.href='medlem.html'"><i class='bx bx-user-circle'></i> Medlemsside</button>
     </nav>
 
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <button class="nav-toggle" id="navToggle"><i class='bx bx-menu'></i></button>
   </div>
 
+  <!-- MOBILMENY -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="skrivekurs.html">Skrivekurs</a>
-    <a href="tekstveiledning.html">Tekstveiledning</a>
-    <a href="boker.html">Bøker</a>
-    <a href="podcast.html">Podcaster</a>
-    <a href="blogg.html">Blogg</a>
-    <a href="om-oss.html">Om oss</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="medlem.html">Medlem</a>
+    <a href="index.html"><i class='bx bx-home'></i> Hjem</a>
+    <a href="boker.html"><i class='bx bx-book'></i> Bøker</a>
+    <a href="podcast.html"><i class='bx bx-microphone'></i> Podcaster</a>
+    <a href="foredrag.html"><i class='bx bx-chalkboard'></i> Foredrag</a>
+    <a href="skrivekurs.html"><i class='bx bx-edit'></i> Kurs</a>
+    <a href="konferanser.html"><i class='bx bx-group'></i> Relasjonskraft</a>
+    <a href="medlem.html"><i class='bx bx-user-circle'></i> Medlemsside</a>
   </div>
 </header>
 
@@ -65,49 +54,71 @@
 </section>
 
 <main class="content-area fade-in">
+  <section class="content-box">
+    <h3>Hva du får</h3>
+    <p>Et skrivekurs som kombinerer emosjonell dybde, teknikk og personlig vekst.</p>
 
-<section class="content-box">
-  <h3>Hva du får</h3>
-  <p>Et skrivekurs som kombinerer emosjonell dybde, teknikk og personlig vekst.</p>
+    <ul>
+      <li>Trygge øvelser for å åpne kreativitet</li>
+      <li>Teknikker for å skrive fra hjertet</li>
+      <li>Guidet refleksjon og indre arbeid</li>
+      <li>Personlig tilbakemelding</li>
+      <li>Tilgang til opptak (hvis digitalt)</li>
+    </ul>
 
-  <ul>
-    <li>Trygge øvelser for å åpne kreativitet</li>
-    <li>Teknikker for å skrive fra hjertet</li>
-    <li>Guidet refleksjon og indre arbeid</li>
-    <li>Personlig tilbakemelding</li>
-    <li>Tilgang til opptak (hvis digitalt)</li>
-  </ul>
-
-  <button class="btn">Meld deg på</button>
-</section>
-
+    <button class="btn">Meld deg på</button>
+  </section>
 </main>
 
-<footer>© 2025 La Masken Falle – Mai Camilla Munkejord</footer>
+<!-- FOOTER MED BOXICONS -->
+<footer class="footer-boxicons">
+  <div class="footer-wrapper">
+    <div class="footer-left">
+      <p><strong>Kontakt:</strong></p>
+      <p><i class='bx bx-phone'></i><a href="tel:+4798765432">+47 987 65 432</a></p>
+      <p><i class='bx bx-envelope'></i><a href="mailto:kontakt@lamaskenfalle.no">kontakt@lamaskenfalle.no</a></p>
+    </div>
+    <div class="footer-center">
+      <p>© 2025 La Masken Falle</p>
+      <p>Mai Camilla Munkejord</p>
+    </div>
+    <div class="footer-right">
+      <p><strong>Følg meg:</strong></p>
+      <p>
+        <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i>Facebook</a><br>
+        <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i>Instagram</a><br>
+        <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin-square'></i>LinkedIn</a><br>
+        <a href="https://pinterest.com" target="_blank"><i class='bx bxl-pinterest'></i>Pinterest</a><br>
+        <a href="https://spotify.com" target="_blank"><i class='bx bxl-spotify'></i>Spotify</a><br>
+        <a href="https://podcasts.apple.com" target="_blank"><i class='bx bxl-apple'></i>Apple Podcast</a>
+      </p>
+    </div>
+  </div>
+</footer>
 
 <!-- SCRIPT -->
 <script>
   const boxes = document.querySelectorAll('.fade-in');
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-  },{threshold:0.12});
-  boxes.forEach(b=>obs.observe(b));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  boxes.forEach(b => obs.observe(b));
 
-  document.getElementById('navToggle').onclick = ()=> {
-    document.getElementById('mobileMenu').classList.toggle('active');
-  };
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
-  document.querySelectorAll('.dropdown-btn').forEach(btn=>{
-    btn.onclick = function(e){
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
       e.stopPropagation();
       this.parentElement.classList.toggle('show');
-    };
+    });
   });
 
-  document.onclick = ()=> {
-    document.querySelectorAll('.dropdown').forEach(d=>d.classList.remove('show'));
-  };
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
 </script>
 
 </body>
-</htm
+</html>

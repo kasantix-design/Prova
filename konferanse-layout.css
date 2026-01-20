@@ -91,6 +91,58 @@ body.heart-conference-layout::before {
   background: #6a9aa8;
   transform: translateY(-2px);
 }
+/* HERO-SEKSJON MED TO SKRÅ BILDER */
+.top-hero-with-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.angled-image {
+  flex: 1 1 200px;
+  max-width: 220px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.angled-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Venstre bilde heller innover */
+.left-img img {
+  transform: rotate(-5deg);
+}
+
+/* Høyre bilde heller motsatt vei */
+.right-img img {
+  transform: rotate(5deg);
+}
+
+/* Responsiv mobilvisning */
+@media (max-width: 768px) {
+  .top-hero-with-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .angled-image {
+    max-width: 80%;
+  }
+}
+
 
 /* Foredragsholdere og tekst */
 .speaker-grid {

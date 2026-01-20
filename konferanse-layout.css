@@ -26,17 +26,19 @@ body.heart-conference-layout::before {
   z-index: -1;
 }
 
+/* Vertikal tittel – to kolonner, én bokstav per linje */
 .vertical-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.4rem;
+  flex-direction: row;         /* Viktig: horisontalt plasserte kolonner */
+  align-items: flex-start;
+  gap: 1.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
   position: absolute;
-  left: 1rem;
-  top: 8%;
+  left: 1.2rem;
+  top: 10%;
   background: rgba(255, 255, 255, 0.65);
-  padding: 1rem 0.6rem;
+  padding: 1.5rem 1rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   z-index: 2;
@@ -44,12 +46,13 @@ body.heart-conference-layout::before {
 
 .vertical-title .word span {
   display: block;
-  line-height: 1.4;
+  line-height: 1.2;
   text-align: center;
 }
 
+/* Gap brukes ikke lenger – kolonneavstand håndteres av flex gap */
 .vertical-title .gap {
-  height: 1.4rem; /* Avstand mellom ordene */
+  display: none;
 }
 
 /* Sentral wrapper for innhold */
@@ -65,7 +68,7 @@ body.heart-conference-layout::before {
 
 /* Innholdsbokser */
 .heart-box {
-  background: rgba(248, 228, 211, 0.85); /* aprikos med transparens */
+  background: rgba(248, 228, 211, 0.85);
   border-radius: 18px;
   padding: 2.5rem 2rem;
   backdrop-filter: blur(8px);

@@ -1,5 +1,5 @@
 /* -------------------------------------
-   FOOTER STIL MED BOXICONS
+   FOOTER STIL MED BOXICONS – OPPDATERT
 -------------------------------------- */
 
 .footer-boxicons {
@@ -11,11 +11,32 @@
 
 .footer-wrapper {
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
+  justify-content: space-between;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
+
+  /* 💡 STREKKER BOKSER LIKT I HØYDEN */
+  align-items: stretch;
+}
+
+/* Felles stil for alle kolonner */
+.footer-left, .footer-center, .footer-right {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* <- jevn høyde */
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* Sentrert tekst i midten */
+.footer-center {
+  text-align: center;
+  opacity: 0.8;
 }
 
 .footer-boxicons a {
@@ -23,7 +44,6 @@
   text-decoration: none;
   font-weight: 600;
 }
-
 .footer-boxicons a:hover {
   text-decoration: underline;
 }
@@ -32,15 +52,6 @@
   margin-right: 0.5rem;
   vertical-align: middle;
   font-size: 1.2rem;
-}
-
-.footer-left, .footer-center, .footer-right {
-  flex: 1 1 280px;
-}
-
-.footer-center {
-  text-align: center;
-  opacity: 0.8;
 }
 
 .footer-boxicons p {
@@ -56,7 +67,7 @@
 @media (max-width: 768px) {
   .footer-wrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
   }
 

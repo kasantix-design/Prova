@@ -136,6 +136,44 @@ body.heart-conference-layout::before {
   display: none;
 }
 
+/* Custom footer */
+.custom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 4rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  font-size: 0.95rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #1a1a1a;
+}
+
+.footer-left,
+.footer-right {
+  text-align: left;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-section i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+
 /* Responsiv mobilvisning */
 @media (max-width: 768px) {
   .tilted-images {

@@ -29,10 +29,10 @@ body.heart-conference-layout::before {
 /* Vertikal tittel – to kolonner, én bokstav per linje */
 .vertical-title {
   display: flex;
-  flex-direction: row;         /* Viktig: horisontalt plasserte kolonner */
+  flex-direction: row;
   align-items: flex-start;
   gap: 1.5rem;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: bold;
   position: absolute;
   left: 1.2rem;
@@ -50,7 +50,6 @@ body.heart-conference-layout::before {
   text-align: center;
 }
 
-/* Gap brukes ikke lenger – kolonneavstand håndteres av flex gap */
 .vertical-title .gap {
   display: none;
 }
@@ -66,12 +65,12 @@ body.heart-conference-layout::before {
   z-index: 3;
 }
 
-/* Innholdsbokser */
+/* 💡 Lys krem bakgrunn med mer transparens */
 .heart-box {
-  background: rgba(255, 250, 240, 0.85); /* Lys krem med 85 % opasitet */
+  background: rgba(255, 250, 235, 0.65); /* Krem + 65 % opasitet */
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  backdrop-filter: blur(8px); /* Gir en subtil glass-effekt */
+  backdrop-filter: blur(8px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -91,7 +90,8 @@ body.heart-conference-layout::before {
   background: #6a9aa8;
   transform: translateY(-2px);
 }
-/* HERO-SEKSJON MED TO SKRÅ BILDER */
+
+/* HERO med skråbilder */
 .top-hero-with-images {
   display: flex;
   align-items: center;
@@ -105,6 +105,7 @@ body.heart-conference-layout::before {
   flex: 1 1 400px;
 }
 
+/* Bildekonteiner */
 .angled-image {
   flex: 1 1 200px;
   max-width: 220px;
@@ -113,7 +114,8 @@ body.heart-conference-layout::before {
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-tilted-images {
+/* Riktig klasse med punktum */
+.tilted-images {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -154,8 +156,11 @@ tilted-images {
   .angled-image {
     max-width: 80%;
   }
-}
 
+  .vertical-title {
+    display: none;
+  }
+}
 
 /* Foredragsholdere og tekst */
 .speaker-grid {
@@ -182,11 +187,4 @@ tilted-images {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   padding: 1.5rem;
-}
-
-/* RESPONSIVT */
-@media (max-width: 768px) {
-  .vertical-title {
-    display: none;
-  }
 }

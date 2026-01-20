@@ -1,0 +1,122 @@
+/* -------------------------------------
+   LAYOUT: HJERTEKONFERANSE – kun for konferanser.html
+-------------------------------------- */
+
+body.heart-conference-layout {
+  background: url('/static/img/hjertebakgrunn.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Lora", serif;
+  color: var(--text);
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Vertikal tittel på venstre side */
+.vertical-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  position: absolute;
+  left: 0;
+  top: 20%;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Sentral kolonne-layout */
+.heart-wrapper {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Bokser med glass-effekt */
+.heart-box {
+  background: rgba(248, 228, 211, 0.75); /* lys aprikos + glass */
+  border-radius: 18px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Topp-heading */
+.heart-box h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.heart-box h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+/* Knapp-stil */
+.heart-btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: #7AA8B7;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.heart-btn:hover {
+  background: #6a9aa8;
+  transform: translateY(-2px);
+}
+
+/* Foredragsholdere seksjon */
+.speaker-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+.speaker-item {
+  flex: 1 1 200px;
+  text-align: center;
+}
+.speaker-item img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Canva minibok-bilder */
+.minibok-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.minibok-page {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer eller bunntekst */
+.heart-footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIV */
+@media (max-width: 768px) {
+  .vertical-title {
+    display: none;
+  }
+}

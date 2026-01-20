@@ -12,13 +12,11 @@
 .footer-wrapper {
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
+  justify-content: center;         /* sentrer kolonnene samlet */
+  align-items: stretch;            /* alle kolonner får lik høyde */
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
-
-  /* 💡 STREKKER BOKSER LIKT I HØYDEN */
-  align-items: stretch;
 }
 
 /* Felles stil for alle kolonner */
@@ -26,19 +24,21 @@
   flex: 1 1 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* <- jevn høyde */
+  justify-content: space-between;  /* jevn vertikal fordeling */
   background: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  min-height: 220px;               /* sikrer visuelt lik høyde ved lite innhold */
 }
 
-/* Sentrert tekst i midten */
+/* Midt-kolonne sentrert */
 .footer-center {
   text-align: center;
   opacity: 0.8;
 }
 
+/* Lenker og ikoner */
 .footer-boxicons a {
   color: var(--text);
   text-decoration: none;
@@ -54,8 +54,10 @@
   font-size: 1.2rem;
 }
 
+/* Tekst-spacing */
 .footer-boxicons p {
   margin: 0.6rem 0;
+  line-height: 1.6;
 }
 
 .footer-boxicons strong {

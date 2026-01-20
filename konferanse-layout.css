@@ -3,7 +3,7 @@
 -------------------------------------- */
 
 body.heart-conference-layout {
-  background: url('/static/img/hjertebakgrunn.jpg') no-repeat center center;
+  background: url('/images/hjertebakgrunn.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   font-family: "Lora", serif;

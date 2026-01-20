@@ -1,6 +1,7 @@
 /* -------------------------------------
-   FOOTER – JUSTERT FOR JEvN BUNNLINJE
+   FOOTER – JUSTERT FOR JEVN BUNNLINJE
 -------------------------------------- */
+
 .footer-boxicons {
   background: var(--background);
   padding: 2.5rem 1.5rem;
@@ -15,11 +16,14 @@
   max-width: 1200px;
   margin: auto;
 
-  align-items: end; /* 📏 Sikrer at boksene flukter nederst */
+  /* 📏 Sikrer at boksene flukter nederst */
+  align-items: end;
 }
 
-/* Hver boks */
-.footer-left, .footer-center, .footer-right {
+/* Hver kolonneboks */
+.footer-left,
+.footer-center,
+.footer-right {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Jevn høyde */
@@ -30,22 +34,26 @@
   text-align: center;
   opacity: 0.8;
 }
+
+/* Venstre kolonne venstrejustert */
 .footer-left {
-  align-items: flex-start;  /* venstrejustert */
+  align-items: flex-start;
   text-align: left;
 }
 
+/* Høyre kolonne høyrejustert */
 .footer-right {
-  align-items: flex-end;    /* høyrejustert */
+  align-items: flex-end;
   text-align: right;
 }
 
-/* Linker */
+/* Lenker */
 .footer-boxicons a {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
 }
+
 .footer-boxicons a:hover {
   text-decoration: underline;
 }
@@ -57,25 +65,28 @@
   font-size: 1.2rem;
 }
 
-/* Avstand mellom linjene */
+/* Linjeavstand */
 .footer-boxicons p {
   margin: 0.6rem 0;
 }
 
-/* Sterk tekst */
+/* Uthevet tekst */
 .footer-boxicons strong {
   display: block;
   margin-bottom: 0.4rem;
 }
 
-/* RESPONSIV */
+/* RESPONSIVT */
 @media (max-width: 768px) {
   .footer-wrapper {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .footer-left, .footer-center, .footer-right {
+  .footer-left,
+  .footer-center,
+  .footer-right {
     align-items: center;
+    text-align: center;
   }
 }

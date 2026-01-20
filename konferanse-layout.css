@@ -1,6 +1,7 @@
 /* -------------------------------------
    LAYOUT: HJERTEKONFERANSE – kun for konferanser.html
 -------------------------------------- */
+
 body.heart-conference-layout {
   position: relative;
   min-height: 100vh;
@@ -8,9 +9,10 @@ body.heart-conference-layout {
   color: var(--text);
   padding: 2rem 1rem;
   overflow-x: hidden;
+  z-index: 1;
 }
 
-/* Bakgrunnsfilter */
+/* Bakgrunnsbilde med 30 % synlighet */
 body.heart-conference-layout::before {
   content: "";
   position: fixed;
@@ -20,11 +22,11 @@ body.heart-conference-layout::before {
   background: url('/images/hjertebakgrunn.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.3; /* 30 % synlighet */
+  opacity: 0.3;
   z-index: -1;
 }
 
-/* Vertikal tittel */
+/* Vertikal tittel på venstre side */
 .vertical-title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -41,7 +43,7 @@ body.heart-conference-layout::before {
   z-index: 2;
 }
 
-/* Wrapper */
+/* Sentral wrapper for innhold */
 .heart-wrapper {
   max-width: 850px;
   margin: auto;
@@ -52,9 +54,9 @@ body.heart-conference-layout::before {
   z-index: 3;
 }
 
-/* Bokser */
+/* Innholdsbokser */
 .heart-box {
-  background: rgba(248, 228, 211, 0.85);
+  background: rgba(248, 228, 211, 0.85); /* aprikos med transparens */
   border-radius: 18px;
   padding: 2.5rem 2rem;
   backdrop-filter: blur(8px);
@@ -78,7 +80,7 @@ body.heart-conference-layout::before {
   transform: translateY(-2px);
 }
 
-/* Foredragsholder-bilde og tilbakemelding */
+/* Foredragsholdere og tekst */
 .speaker-grid {
   display: flex;
   flex-wrap: wrap;
@@ -95,13 +97,14 @@ body.heart-conference-layout::before {
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-/* Footer / bunntekst */
+/* Footer-boks */
 .heart-footer {
   text-align: center;
   font-size: 0.9rem;
   opacity: 0.8;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 12px;
+  padding: 1.5rem;
 }
 
 /* RESPONSIVT */

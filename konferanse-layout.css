@@ -68,10 +68,10 @@ body.heart-conference-layout::before {
 
 /* Innholdsbokser */
 .heart-box {
-  background: rgba(248, 228, 211, 0.85);
+  background: rgba(255, 250, 240, 0.85); /* Lys krem med 85 % opasitet */
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); /* Gir en subtil glass-effekt */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 

@@ -86,10 +86,17 @@ body.heart-conference-layout::before {
 /* Skrå bildestil */
 .image-wrapper {
   width: 260px;
-  height: auto;
+  height: 320px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .tilt-left img {
